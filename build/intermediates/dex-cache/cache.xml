@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.8.0_a53dda6537d33d1aff5dbedc19e90a5e3f37a379/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_04456818934954fb150ff46a27e85e3c20799996/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/libs/ksoap2-android-assembly-3.6.2-jar-with-dependencies.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b457441023b25f0b6bae28c76be982a4e49a8666">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/2/ksoap2-android-assembly-3.6.2-jar-with-dependencies_deb242705b085adea028acbc40b5747243320129/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ee5304fd374e0b4ebf6b42d4037fbfb2c5336511">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-9.8.0_75eeabf5e78271dfc1ec752367b57a755c384628/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="15e59454416c6341bd3ed2533b585cd340682dd1">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-9.8.0_1f776704542a1f3e9a5fee5049fc0ae848bf4644/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a972970c8beddb69c198f61f3fc55f0606a7dfe3">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-9.8.0_675de585e2a68ecc2f36e07ed1e8b8ee999b1a73/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3daa7a9c9009fd386872a84c177a76979bdcafd6">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-9.8.0_67401271e742ab630f8b41eaaf57a9cfc3c6797a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.8.0_61b33d25f68127e03c35db6220d3bc8ba4879d9f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ca851be26ff89f5b32cc222cee98139fb3fac830">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-9.8.0_29814531c4bb32b5e0493e74302c01b8a7b83eb3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="363a20f1d25336e827dd24020f2ecdc42d62638f">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gass-9.8.0_659f9c6941030cc4416b2f99fe6dbe68021bd296/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_1c4b87504094d2b7a4a7ed8be157749f0e069823/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ec9104b53aee77dfcfd2fe1c4add23ff7c4df55f">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-9.8.0_39e33cbc6ebdc88f00ff2cb006b52fdfacb8d1a0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_a3513852319b568a5601cdec476a03b7b2b984f7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a7a04d6b7c01e569a285fa627cf64f5b05295906">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-9.8.0_b80684e5f23960a532b2d963c46643df372266d0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a1ed98e01bd58976d80c062fd0ea2968a1ff68a1">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-9.8.0_6a4729f2bbe50ef580a7cc21543e1b23a9e40a36/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/.gradle/caches/modules-2/files-2.1/org.greenrobot/eventbus/3.0.0/ddd99896e9569eaababbe81b35d80e1b91c4ad85/eventbus-3.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/eventbus-3.0.0_a968fe7fd2a9a749548866b29c1854ee0cff62d6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/.gradle/caches/modules-2/files-2.1/cz.msebera.android/httpclient/4.3.6/526a9f794eab830eae4f23a62c572878b3f491ab/httpclient-4.3.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/httpclient-4.3.6_fa2dd99a79cd34a3abfa665bb891aafc35e1ecdb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_04d5ea9c9b415595d537b028513afb1a02a678a1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9ff04cc3470178a44512624036751a803418c2ca">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.8.0_669e53f4f4969a471c003ea3b01d6dec9e8ad8c1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-24.0.0_15f8c375c83b9e7c404208c92fd4d655178c3812/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/palette-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-palette-v7-24.0.0_5fe7765be1f3ffed338d76ec17f74569e424fe0c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="cef85cfc7df40e29fbea58844dd4c1e7d0b15542">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-9.8.0_7846c0c1692aca90ed168b5b0fe93401e64267b4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="04bbbddf868aa02dd33f9e90d8f5d908c360f638">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-9.8.0_3fc842c3d048b6cc8f2ac00af0718618090e031c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c61641e333fa88da21758bab8cc28ee16604b05f">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.8.0_4c296b1e11930cc10416b5f36b3508ff9292e94b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.9/386a4339ffe52d5d63e80f9bed8d2b1d1a418249/android-async-http-1.4.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="386a4339ffe52d5d63e80f9bed8d2b1d1a418249">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/android-async-http-1.4.9_a71cf96cc9112258bcb9907cd267d0056002323f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="50e35ae101a679c4c8ef3dda075b1df9d5d947d9">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-9.8.0_afb3c61a4eba3a6a4dd8830b9f896b6592b9414a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/multidex/1.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-multidex-1.0.1_d34854347d20555358fb447e1b757483120d007b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b4671be3d1288bf4e5f527cd33e42909fbe4ecc6">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-9.8.0_3e44886d55437ad1148ec9b4b890caaf9408ed3f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbb3885c40e431cd2b0dc69c0cab2bf6d5da7b43">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-9.8.0_e9e257ca9cad846f6f6da70de2a85756aaf5436a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a30aea7df545072ad3c06f56b2efc13e67222140">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-9.8.0_bcdcacf619b84c071e413282d4983ee7427f9c52/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f47ede9561595584dca71104baa0fecb36dda87">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.8.0_5fde80c1e9ef2a7ba3b4727d92ea7eb2856dd1ce/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="266570862e5792ef3c51143a8b8593cf54fac68d">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-9.8.0_0a6bbac013a2e7263bf8e7c870b9e91696385409/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="190a642ba16d1421296a4d794606279b80039c59">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.8.0_d5fc4bab46ca5d37d2eb485b2a14f0b12d4bf0f4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_2cf4306e14ca38a2731d17f5b06a213bb689d34f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0b53c4b90654b67ee3892a8e2e7b819c083ab7a6">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-9.8.0_f7e77ae179cc2dccf43688802df819894c7bfd13/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e92aadd0697922316d1395c1887a23aebec640a">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.8.0_5b63542f83814a024a0f6fd836af05a7d304f8f5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_8e9db15c248b4db508ccaee3154986c126245d55/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_5b2f0c998f2abf1bf4e1175225061acebccfaab7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="910c013c511f752c4bbe24c5f492f669f4a3ccc0">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-9.8.0_2586c60097674385d307e8d6c7b800048f4d93f8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6b6f292b8b951dcf2ecf2b20853e3eabc7d65c48">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.8.0_66969c30fe608049029bc5712eec299f6c588bb0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_d53b0eafe23882a8ca29470bc3fbabe896826829/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3f8f779a22cbb4c4d0759467a4f1011bb5252970">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-module-9.8.0_c19b150813471a0e8990e142cc9ebe7a9bc13d5d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="1bef866fd1e979d3f57f8ee9e72caed46054a061">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_6e977755ab363a07d11439410600169ce8306728/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e9b2cfdfd59b03643f1e240668275378b96615a8">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-9.8.0_a7b63fb853a4b4251c1640287d1aa6f9adea5a23/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="32d3293c22f4107fdfa3d8794928bae373d43ead">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_26212828bc87b10734b2de9c43d1e4d16765ff2c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="679251204de40ace98776a6f4e3a649c27e3d89f">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-9.8.0_ab19bd956c5671d6c45f68ed7db7459597fc87cc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="20a3c4e355150c15c13dd58045d43ad0c717d916">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-9.8.0_f6d263949c75adc872c65bad13728f9d85920c12/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="03df48d3713661d66ad024b1e406259a4c26fcac">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.8.0_8ee64f3855ab568afcde607623c472ee15e4a357/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9dae58326f6f6a515022468cce56dd04ec3b9fdb">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-9.8.0_988336541b85464606c61df96abc02efc1cd6fce/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_13a3fbc13c3d2186852b143310747dc9280eec4c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_1679b8b30c21aa3ac574cdff0f99b2704adc0942/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-awareness/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a2537b11ae24b42172d34e2a613fc0b903c56158">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-awareness-9.8.0_c08853a46563530e9084ca57dc751d63613aa36d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7fd91ec2730fdaa82906aad32a3f3d3e574bae56">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-9.8.0_766a6e1a804cfd9c93c6cdc08910445dc2b57b10/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="74ac7cbcf0de4a88e59612dc3a9e3f9e71acb4ca">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-9.8.0_e0e6a38945f68b332fc7c84fb573c6368d4b9eea/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_a9f5e955c742bdd9b5109adeb1ff4376ae0a8fc7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_9545f8ebf8878e84351e25ac5e0ddfcdbd2788a1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="122ec9237acd8a57d974b9d529987f1ee6ca5aea">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-9.8.0_24638bf0054d89fd1fe5fdf4215f0ea6c84a80ef/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_c9a90227c1ce1c5b6a9563ff0bb62ed700760426/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0b8e087da59c0b062c33f49a335e59f907086da2">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-9.8.0_bbd67ea70b8ad4faf25f8b27a5ff27bb49bf76d8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="289cad663c288ce965463cb9ece8b35cc7de0fac">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-9.8.0_257a29c79646f811b0be5af8117c84d0f611e787/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="16afe57c1d7f8165d107c7806ce7b0c71de87159">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-9.8.0_a35bf13aec20f52fe68a0831d8c09711f1d743d7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e3234cd25e23069abd48ecd2117bc0e8011bf45a">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-9.8.0_cfa78f91d21538fe36bc15296580acfef8fefa96/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_d3e31a99e61c463ae760c9f3274bb7811fd999c1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e56f31b23ddb067f95f01255295167db7c798612">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-9.8.0_8a139109d82e30f493be889654d62cea695ff7bd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f2d240dd085626f03f759c41d628a0c8b63e491f">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-9.8.0_c82898cbcda1005034366a9782b9e1eef44b86c9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c81df6bd515398ebe45089b0b16c55752a131f6a">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-9.8.0_b1987365cf848564f410eddfe89329a5ddb134b5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-instantapps/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="00d358528c5a8731a6e19bca910cbb3fd755ee31">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-instantapps-9.8.0_9b1728ac0f56727bf22e16643080443edb6ee54e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="055eed08c9cff50cac0db69c74c4d9ff7aef3d84">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-framework-9.8.0_43025793b7aa22fd23ee2ef63f3457962ab4f1b8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_d99d97989ae8069415e14d74c6f316566290fbe7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_4c391f60a1a43ee6da701c0f69655b6877c7420f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="85299bf1924dde0200109a58033c5ef84ecb6991">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-9.8.0_38be2b539f862ea62cbaacffe5cd085b06690f92/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_dd7ef5ce5031bc7a3a074b419ac5ea1e1c9895a0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5ffe8867f51cfc726e9fb21db1e5b6962ebf25a0">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-9.8.0_c418ea224dff2d34898a0d817a69dd607a5f5848/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_c09edc048dada6e76dae460987dafb4433771db0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="2d3035050a075484cbf2e33f1ce1f779bae4d451">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-9.8.0_8faf27b12e1268f92fe97de276f34b904202cd1b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4438b1a7848a7c571122ba618aa1304514aabee6">
+        <dex dex="/Users/user/Projetos/Principal/GestaoSpa/Fontes/gestaoSpaAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.8.0_188a0539fe1289d033aae34c2f0aaf8f8932bf65/classes.dex" />
+    </item>
+
+</items>

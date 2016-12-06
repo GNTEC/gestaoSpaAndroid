@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:addStatesFromChildren="false">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_login"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#4DB6AC"
+        app:titleTextColor="@color/colorAccent"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+    </android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:layout_marginTop="16dp"
+        android:id="@+id/login_img"
+        android:background="@drawable/logotipo"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_below="@+id/toolbar_login"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_marginTop="16dp"
+        android:id="@+id/login_nome"
+        android:gravity="center_horizontal"
+        android:textColor="#ff6f00"
+        android:layout_below="@+id/login_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="HIGIENÓPOLIS"/>
+
+    <TextView
+        android:id="@+id/login_cidade"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="São Paulo"
+        android:layout_below="@+id/login_nome"/>
+
+
+    <EditText
+        android:layout_margin="16dp"
+        android:id="@+id/login_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:textSize="18dp"
+        android:layout_below="@+id/login_cidade"
+        />
+
+    <EditText
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:id="@+id/login_senha"
+        android:hint="Senha"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_email"
+        android:password="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/rodape"
+        android:id="@+id/img_rodape"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:onClick="login"
+        android:text="Entrar"
+        android:id = "@+id/btn_login_entrar"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        android:layout_below="@+id/login_senha"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" />
+
+
+</RelativeLayout>

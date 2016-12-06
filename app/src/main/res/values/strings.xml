@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Spa</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string-array name="fakeUnidade">
+        <item>Escolha</item>
+        <item>Unidade 1</item>
+        <item>Unidade 2</item>
+        <item>Unidade 3</item>
+    </string-array>
+
+    <string-array name="fakeServico">
+        <item>Escolha</item>
+        <item>Serviço 1</item>
+        <item>Serviço 2</item>
+        <item>Serviço 3</item>
+    </string-array>
+
+    <string-array name="fakeProfissional">
+        <item>Escolha</item>
+        <item>Profissional 1</item>
+        <item>Profissional 2</item>
+        <item>Profissional 3</item>
+    </string-array>
+
+    <string-array name="fakeHora">
+        <item>Escolha</item>
+        <item>Hora 1</item>
+        <item>Hora 2</item>
+        <item>Hora 3</item>
+    </string-array>
+
+
+    <string name="title_activity_maps">Map</string>
+</resources>

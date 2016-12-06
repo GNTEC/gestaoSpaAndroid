@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_historico"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:titleTextColor="@color/colorAccent"
+        android:background="#4DB6AC"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+
+        android:layout_margin="16dp"
+        android:id="@+id/historico_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#eeeeee"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:elevation="1dp">
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:id="@+id/historico_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="03/11/2016  14:00  Ayurvedica PENDENTE"/>
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:id="@+id/historico_2"
+            android:layout_below="@+id/historico_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="05/09/2016  14:00  Relaxante CANCELADA"/>
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:textSize="16sp"
+            android:id="@+id/historico_3"
+            android:layout_below="@+id/historico_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="01/09/2016  14:00  Shiatu 45' REALIZADO"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/rodape"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY"
+        android:id="@+id/img_rodape" />
+
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_localizacao"
+        android:layout_width="match_parent"
+        app:titleTextColor="@color/colorAccent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#4DB6AC"
+        app:popupTheme="@style/AppTheme.PopupOverlay"> </android.support.v7.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_localizacao"
+        android:layout_margin="5dp"
+        android:id="@+id/container">
+
+        <include
+            layout="@layout/activity_maps"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/rodape"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY"
+        android:id="@+id/img_rodape" />
+
+</RelativeLayout>

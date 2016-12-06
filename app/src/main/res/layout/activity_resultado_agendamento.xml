@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_resultado"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#4DB6AC"
+        app:titleTextColor="@color/colorAccent"
+        app:popupTheme="@style/AppTheme.PopupOverlay"> </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/resultado_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:layout_below="@id/toolbar_resultado"
+        android:layout_marginTop="16dp"
+        >
+
+
+        <TextView
+            android:id="@+id/resultado_txv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AGENDAMENTO REALIZADO\n\nData: 03/11/2016 - 12:00 hs.\nTerapia: Massagem Relaxante\nProfissional: Ana Luiza"/>
+
+        <TextView
+            android:id="@+id/resultado_txv2"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resultado_txv1"
+            android:text="\n\n---- OU ----\n\n"/>
+
+        <TextView
+            android:id="@+id/resultado_txv3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resultado_txv2"
+            android:text="AGENDAMENTO NÃO REALIZADO\n\nHorário reservado para outro cliente. Tente novamente."/>
+
+
+    </RelativeLayout>
+
+    <Button
+        android:background="#000000"
+        android:onClick="onClickNovoAgendamento"
+        android:textColor="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Realizar outro agendamento"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="90dp"
+        android:id="@+id/button2" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/rodape"
+        android:id="@+id/img_rodape"
+        android:scaleType="fitXY"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

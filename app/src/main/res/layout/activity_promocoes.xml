@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_promo"
+        android:layout_width="match_parent"
+        app:titleTextColor="@color/colorAccent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#4DB6AC"
+        app:popupTheme="@style/AppTheme.PopupOverlay"> </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:textSize="18sp"
+        android:id="@+id/promo_1"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="PROMOÇÕES"
+        android:textColor="#ff0000"
+        android:textStyle="bold"
+        android:layout_above="@+id/historico_layout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/rodape"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY"
+
+        android:id="@+id/img_rodape" />
+
+    <RelativeLayout
+
+        android:id="@+id/historico_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/promo_1"
+        android:layout_alignStart="@+id/promo_1">
+
+        <TextView
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textSize="18sp"
+            android:id="@+id/promo_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Aproveite nossa semana de tratamento estético com 10 opções de procedimentos, ao custo de R$ 1.000,00 o pacote.\n\nPromoção válida até 31/10/2016"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
