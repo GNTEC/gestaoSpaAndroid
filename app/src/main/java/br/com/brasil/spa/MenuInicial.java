@@ -1,5 +1,6 @@
 package br.com.brasil.spa;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -23,6 +24,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +32,10 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import br.com.brasil.spa.Entidades.Filial;
 import br.com.brasil.spa.Entidades.HorasProfissional;
@@ -45,25 +50,30 @@ import br.com.brasil.spa.Utils.Eventos;
 public class MenuInicial extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    //Variaveis estáticas
     private static Integer COD_EMPRESA = 58;
+    private Integer posicao;
+
+    //Listas
     private List<Unidade> lstUnidades;
     private List<Servicos> lstServicos;
     private List<Profissionais> lstProfissionais;
     private List<ProfissionaisHorario> lstProfissionaisHorario;
     private List<ResultadoAgendamento> lstResultadoAgendamento;
-
     private List<Filial> auxLstUnidades;
     private List<String> lstSpnUnidade;
     private List<String> auxLstServicos;
     private List<String> auxLstProfissionais;
     private List<String> auxLstProfissionaisHorario;
 
+    //Entidades
     private Filial filial;
     private Profissionais profissionais;
     private Servicos servicos;
     private Unidade unidade;
     private HorasProfissional horasProfissional;
 
+    //Spinners
     private Spinner spnU;
     private Spinner spnS;
     private Spinner spnP;
@@ -83,6 +93,11 @@ public class MenuInicial extends AppCompatActivity
 
     //AGENDAMENTO
     private String resultadoAgendamento;
+    private Date horaAgendamento;
+
+    //Dados Login
+    private Integer cod_cliente;
+    private String nome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,11 +113,15 @@ public class MenuInicial extends AppCompatActivity
         final Drawable upArrow = getResources().getDrawable(R.drawable.mobile_nav);
         upArrow.setColorFilter(Color.parseColor("#ffffff"), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
-        getSupportActionBar().setTitle("Spa BUDDHA");
+        getSupportActionBar().setTitle("Spa Dona Beleza");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#4DB6AC")));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         EventBus.getDefault().register(this);
+
+        //Recebe os parametros de unidade
+        Bundle extras = getIntent().getExtras();
+        posicao = extras.getInt("pUnidade");
 
         spnU = (Spinner) findViewById(R.id.spn_unidade);
         spnS = (Spinner) findViewById(R.id.spn_servico);
@@ -125,11 +144,10 @@ public class MenuInicial extends AppCompatActivity
 
         travaSpinners();
 
-        //preencheSpinnerUnidade();
-
         getUnidade();
-
-        //spinners();
+        spnU.setEnabled(false);
+        //Seta serviços de acordo com o parametro recebido
+        spnS.setEnabled(true);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -142,7 +160,7 @@ public class MenuInicial extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //clicks nos spinners
-        spnU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        /*spnU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
@@ -168,13 +186,13 @@ public class MenuInicial extends AppCompatActivity
                 //NADA
 
             }
-        });
+        });*/
 
         spnS.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                if (!auxLstServicos.get(i).equals("Selecione")) {
+                if (!auxLstServicos.get(i).equals("Selecione") && !auxLstServicos.get(i).equals("Sem servicos para exibição")) {
                     servicoSelecionado = auxLstServicos.get(i);
                     codServicoSelecionado = lstServicos.get(i).getCodServico();
                     //Toast.makeText(MenuInicial.this, servicoSelecionado, Toast.LENGTH_SHORT).show();
@@ -194,13 +212,13 @@ public class MenuInicial extends AppCompatActivity
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                if (!auxLstProfissionais.get(i).equals("Selecione")) {
+                if (!auxLstProfissionais.get(i).equals("Selecione") && !auxLstProfissionais.get(i).equals("Sem profissionais para exibição")) {
+
                     profissionalSelecionado = auxLstProfissionais.get(i);
                     codProfissionalSelecionado = lstProfissionais.get(i).getCOD_PROFISSIONAL();
                     getHorario();
-                    //Toast.makeText(MenuInicial.this, profissionalSelecionado, Toast.LENGTH_SHORT).show();
-                    //preencheSpinnerProfissionalHorarios();
                     spnH.setEnabled(true);
+
                 }
             }
 
@@ -216,16 +234,8 @@ public class MenuInicial extends AppCompatActivity
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                /*
-                * Quando for banco de dados setar variaveis para a proxima query
-                * Quando mudar alguma opção do spinner zerar os proximos spinners
-                * para mandar a nova query atualizada
-                */
+                //horaAgendamento = SimpleDateFormat(auxLstProfissionaisHorario.get(i).toString());
 
-                /*if(!auxLstHorasProfissional.get(i).equals("Selecione")){
-                    horarioSelecionado = auxLstHorasProfissional.get(i);
-                    Toast.makeText(MenuInicial.this, horarioSelecionado, Toast.LENGTH_SHORT).show();
-                }*/
             }
 
             @Override
@@ -274,7 +284,9 @@ public class MenuInicial extends AppCompatActivity
         ArrayAdapter<String> adapterProfissionais = new ArrayAdapter<String>(this,
                 R.layout.support_simple_spinner_dropdown_item, auxLstProfissionais);
         adapterProfissionais.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spnP.setAdapter(adapterProfissionais);
+        if(!auxLstProfissionais.equals(null)) {
+            spnP.setAdapter(adapterProfissionais);
+        }
 
     }
 
@@ -283,7 +295,9 @@ public class MenuInicial extends AppCompatActivity
         ArrayAdapter<String> adapterProfissionaisHorario = new ArrayAdapter<String>(this,
                 R.layout.support_simple_spinner_dropdown_item, auxLstProfissionaisHorario);
         adapterProfissionaisHorario.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spnH.setAdapter(adapterProfissionaisHorario);
+        if(auxLstProfissionais.size()>0) {
+            spnH.setAdapter(adapterProfissionaisHorario);
+        }
     }
 
     public void onRadioButtonClicked(View v) {
@@ -305,9 +319,13 @@ public class MenuInicial extends AppCompatActivity
                 //preencheSpinnerProfissional();
                 spnP.setEnabled(true);
                 if (dataRecebida.equals("a")) {
-                    Toast.makeText(MenuInicial.this, "Selecione uma data", Toast.LENGTH_SHORT).show();
-                    rb2.setSelected(true);
-                    rb1.setSelected(false);
+                    rb2.setChecked(true);
+                    //Toast.makeText(MenuInicial.this, "Selecione uma data", Toast.LENGTH_SHORT).show();
+                    AlertDialog.Builder dlg = new AlertDialog.Builder(MenuInicial.this);
+                    dlg.setMessage("Você deve selecionar uma data para escolher o profissional");
+                    dlg.setNeutralButton("OK", null);
+                    dlg.show();
+
                 } else {
 
                     getProfissionais(COD_EMPRESA, codServicoSelecionado, dataRecebida);
@@ -374,6 +392,9 @@ public class MenuInicial extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
             Intent intent = new Intent(this, Promocoes.class);
             startActivity(intent);
+        }else if(id == R.id.nav_unidade){
+            Intent intent = new Intent(this, SelecaoUnidade.class);
+            startActivity(intent);
         } else if (id == R.id.nav_la) {
             finish();
             Intent intent = new Intent(this, Login.class);
@@ -385,14 +406,6 @@ public class MenuInicial extends AppCompatActivity
         return true;
     }
 
-    @Subscribe
-    public void onEventRecebeData(Eventos.RecebeData data) {
-
-        dataRecebida = data.getData();
-        txv_data.setText("Data selecionada: " + dataRecebida);
-
-    }
-
     public void getUnidade() {
         new Thread() {
             @Override
@@ -402,7 +415,8 @@ public class MenuInicial extends AppCompatActivity
                     String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/GET_UNIDADES_2";
                     String OPERATION_NAME = "GET_UNIDADES_2";
                     String WDSL_TARGET_NAMESPACE = "http://www.gestaospa.com.br/PROD/WebSrv/";
-                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+                    //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
 
                     WebService objWs = new WebService();
                     objWs.setSOAP_ACTION(SOAP_ACTION);
@@ -448,6 +462,9 @@ public class MenuInicial extends AppCompatActivity
                         @Override
                         public void run() {
                             preencheSpinnerUnidade();
+                            COD_FILIAL = auxLstUnidades.get(posicao).getCOD_FILIAL();
+                            spnU.setSelection(posicao);
+                            getServicos(COD_FILIAL);
                         }
                     });
 
@@ -464,10 +481,14 @@ public class MenuInicial extends AppCompatActivity
             public void run() {
                 try {
 
+                    lstServicos = new ArrayList<Servicos>();
+                    auxLstServicos = new ArrayList<String>();
+
                     String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/GET_SERVICOS_2";
                     String OPERATION_NAME = "GET_SERVICOS_2";
                     String WDSL_TARGET_NAMESPACE = "http://www.gestaospa.com.br/PROD/WebSrv/";
-                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+                    //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
 
                     WebService objWs = new WebService();
                     objWs.setSOAP_ACTION(SOAP_ACTION);
@@ -478,9 +499,6 @@ public class MenuInicial extends AppCompatActivity
                     //Integer cod_filial = filial.getCodEmpresa();
                     String resultadoFuncServicos = objWs.getServicos(COD_EMPRESA, filial);
                     JSONArray jsonArray = new JSONArray(resultadoFuncServicos);
-
-                    lstServicos = new ArrayList<Servicos>();
-                    auxLstServicos = new ArrayList<String>();
 
                     if (jsonArray.length() > 0) {
 
@@ -500,6 +518,9 @@ public class MenuInicial extends AppCompatActivity
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            if(auxLstServicos.size() == 0){
+                                auxLstServicos.add("Sem servicos para exibição");
+                            }
                             preencheSpinnerServicos();
                         }
                     });
@@ -518,10 +539,14 @@ public class MenuInicial extends AppCompatActivity
             public void run() {
                 try {
 
+                    lstProfissionais = new ArrayList<Profissionais>();
+                    auxLstProfissionais = new ArrayList<String>();
+
                     String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/GET_PROFISSIONAIS_2";
                     String OPERATION_NAME = "GET_PROFISSIONAIS_2";
                     String WDSL_TARGET_NAMESPACE = "http://www.gestaospa.com.br/PROD/WebSrv/";
-                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+                    //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
 
                     WebService objWs = new WebService();
                     objWs.setSOAP_ACTION(SOAP_ACTION);
@@ -531,12 +556,9 @@ public class MenuInicial extends AppCompatActivity
 
                     String resultadoFuncProfissionais = objWs.getProfissionais(COD_EMPRESA, COD_SERVICO, DATA);
 
-                    JSONArray jsonArray = new JSONArray(resultadoFuncProfissionais);
+                    final JSONArray jsonArray = new JSONArray(resultadoFuncProfissionais);
 
                     if (jsonArray.length() > 0) {
-
-                        lstProfissionais = new ArrayList<Profissionais>();
-                        auxLstProfissionais = new ArrayList<String>();
 
                         auxLstProfissionais.add("Selecione");
 
@@ -553,11 +575,14 @@ public class MenuInicial extends AppCompatActivity
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+
+                            if(auxLstProfissionais.size() == 0){
+                                auxLstProfissionais.add("Sem profissionais para exibição");
+                            }
                             preencheSpinnerProfissional();
                         }
                     });
 
-                    //TODO- carregar o spinner correspondente com os dados e setar a entidadade com opc selecionada spinnner anterior
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -572,10 +597,14 @@ public class MenuInicial extends AppCompatActivity
             public void run() {
                 try {
 
+                    lstProfissionaisHorario = new ArrayList<ProfissionaisHorario>();
+                    auxLstProfissionaisHorario = new ArrayList<String>();
+
                     String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/GET_HORARIO_LIVRE_PROFISSIONAL_2";
                     String OPERATION_NAME = "GET_HORARIO_LIVRE_PROFISSIONAL_2";
                     String WDSL_TARGET_NAMESPACE = "http://www.gestaospa.com.br/PROD/WebSrv/";
-                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+                    //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
 
                     WebService objWs = new WebService();
                     objWs.setSOAP_ACTION(SOAP_ACTION);
@@ -588,9 +617,6 @@ public class MenuInicial extends AppCompatActivity
                     JSONArray jsonArray = new JSONArray(resultadoHorarios);
 
                     if (jsonArray.length() > 0) {
-
-                        lstProfissionaisHorario = new ArrayList<ProfissionaisHorario>();
-                        auxLstProfissionaisHorario = new ArrayList<String>();
 
                         auxLstProfissionaisHorario.add("Selecione");
 
@@ -610,11 +636,13 @@ public class MenuInicial extends AppCompatActivity
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            if(auxLstProfissionaisHorario.size() == 0){
+                                auxLstProfissionaisHorario.add("Sem horários para exibição");
+                            }
                             preencheSpinnerProfissionalHorarios();
                         }
                     });
 
-                    //TODO- carregar o spinner correspondente com os dados e setar a entidadade com opc selecionada spinnner anterior
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -642,8 +670,8 @@ public class MenuInicial extends AppCompatActivity
                     objWs.setWSDL_TARGET_NAMESPACE(WDSL_TARGET_NAMESPACE);
                     objWs.setSOAP_ADDRESS(SOAP_ADDRESS);
 
-                    resultadoAgendamento = objWs.setAgendamento(COD_EMPRESA, COD_FILIAL, 0, COD_EMPRESA, codServicoSelecionado, codProfissionalSelecionado,
-                            dataRecebida, dataRecebida);
+                    resultadoAgendamento = objWs.setAgendamento(COD_EMPRESA, COD_FILIAL, 0, cod_cliente,
+                            codServicoSelecionado,codProfissionalSelecionado,dataRecebida, "");
 
                     resultadoAgendamento = resultadoAgendamento.replace("\"","");
 
@@ -672,5 +700,28 @@ public class MenuInicial extends AppCompatActivity
 
             Toast.makeText(this ,"Erro no Agendamento" , Toast.LENGTH_SHORT).show();
         }
+    }
+
+    //Eventos do event bus
+
+    //Recebe data do datePicker
+    @Subscribe
+    public void onEventRecebeData(Eventos.RecebeData data) {
+
+        dataRecebida = data.getData();
+        txv_data.setText("Data selecionada: " + dataRecebida);
+
+    }
+
+    //Recebe Cod_Cliente
+    @Subscribe
+    public void onEventRecebeDadosLoginCodCliente(Eventos.RecebeDadosLoginCodCliente COD_CLIENTE){
+        cod_cliente = COD_CLIENTE.getCOD_CLIENTE();
+    }
+
+    //Recebe nome do cliente
+    @Subscribe
+    public void onEventRecebeDadosLoginNomeCliente(Eventos.RecebeDadosLoginNomeCliente NOME){
+        nome = NOME.getNOME();
     }
 }

@@ -14,11 +14,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.greenrobot.eventbus.EventBus;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import br.com.brasil.spa.Utils.Eventos;
 
 /**
  * Created by abadari on 27/10/2016.
@@ -37,6 +42,10 @@ public class Login extends AppCompatActivity implements Runnable{
     private List<String> lstParamentros;
     private String resultado;
 
+    //dados login
+    private Integer COD_CLIENTE;
+    private String NOME;
+    private String MSG_RETORNO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,18 +127,16 @@ public class Login extends AppCompatActivity implements Runnable{
     @Override
     public void run() {
 
-        String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/LOGIN_2";
-        String OPERATION_NAME = "LOGIN_2";
+        String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/LOGIN_3";
+        String OPERATION_NAME = "LOGIN_3";
         String WDSL_TARGET_NAMESPACE = "http://www.gestaospa.com.br/PROD/WebSrv/";
-        String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+        String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
 
         /*String usuario= "claudio@dgm.com.br";
         String senha = "aaa@123";*/
 
         String usuario = login_email.getText().toString().trim();
         String senha = login_senha.getText().toString();
-
-        //TODO- Pegar os dados dos textviews e passar na função
 
         try {
 
@@ -141,7 +148,16 @@ public class Login extends AppCompatActivity implements Runnable{
             objWs.setSOAP_ADDRESS(SOAP_ADDRESS);
 
             resultado = objWs.login(COD_EMPRESA,usuario,senha);
-            resultado= resultado.replace("\"", "");
+            JSONObject obj = new JSONObject(resultado);
+            COD_CLIENTE = obj.getInt("COD_CLIENTE");
+            NOME = obj.getString("NOME");
+            MSG_RETORNO = obj.getString("MSG_RETORNO");
+
+            //Passa os dados para o eventbus para pegar em outro lugar
+            EventBus.getDefault().post(new Eventos.RecebeDadosLoginCodCliente(COD_CLIENTE));
+            EventBus.getDefault().post(new Eventos.RecebeDadosLoginNomeCliente(NOME));
+
+
             Log.e("LOGIN", resultado.toString());
             handler.post(new Runnable() {
                 @Override
@@ -159,14 +175,16 @@ public class Login extends AppCompatActivity implements Runnable{
         } catch (XmlPullParserException ex){
             Log.e("MainAcvitity xml ex: " , ex.toString());
             ex.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
         logou();
     }
 
     public void logou(){
-        if(resultado.equals("OK")){
-            Intent intent = new Intent(Login.this, MenuInicial.class);
+        if(MSG_RETORNO.equals("OK")){
+            Intent intent = new Intent(Login.this, SelecaoUnidade.class);
             startActivity(intent);
         }
     }

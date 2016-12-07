@@ -22,4 +22,39 @@ public class Eventos {
             this.data = data;
         }
     }
+
+    public static final class RecebeDadosLoginCodCliente{
+
+        Integer COD_CLIENTE;
+
+        public RecebeDadosLoginCodCliente(Integer COD_CLIENTE){
+            this.COD_CLIENTE= COD_CLIENTE;
+        }
+
+        public Integer getCOD_CLIENTE() {
+            return COD_CLIENTE;
+        }
+
+        public void setCOD_CLIENTE(Integer COD_CLIENTE) {
+            this.COD_CLIENTE = COD_CLIENTE;
+        }
+
+    }
+
+    public static final class RecebeDadosLoginNomeCliente{
+
+        String NOME;
+
+        public RecebeDadosLoginNomeCliente(String NOME){
+            this.NOME = NOME;
+        }
+
+        public String getNOME() {
+            return NOME;
+        }
+
+        public void setNOME(String NOME) {
+            this.NOME = NOME;
+        }
+    }
 }

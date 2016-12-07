@@ -4,24 +4,23 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
             android:title="Histórico" />
         <item
+            android:id="@+id/nav_unidade"
+            android:title="Selecionar Unidade"
+            />
+        <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
             android:title="Agendar" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
             android:title="Localização" />
         <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Promoções" />
 
         <item
             android:id="@+id/nav_la"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Sair" />
     </group>
 
