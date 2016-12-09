@@ -45,6 +45,7 @@ import br.com.brasil.spa.Entidades.Servicos;
 import br.com.brasil.spa.Entidades.Unidade;
 import br.com.brasil.spa.Utils.DateDialog;
 import br.com.brasil.spa.Utils.Eventos;
+import br.com.brasil.spa.Utils.Sessao;
 
 
 public class MenuInicial extends AppCompatActivity
@@ -93,7 +94,8 @@ public class MenuInicial extends AppCompatActivity
 
     //AGENDAMENTO
     private String resultadoAgendamento;
-    private Date horaAgendamento;
+    private String horaAgendamento;
+    private String timeAsString;
 
     //Dados Login
     private Integer cod_cliente;
@@ -118,6 +120,10 @@ public class MenuInicial extends AppCompatActivity
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         EventBus.getDefault().register(this);
+
+        //Recebe os dados do cliente
+        cod_cliente = Sessao.getCodCliente();
+        nome = Sessao.getNomeCliente();
 
         //Recebe os parametros de unidade
         Bundle extras = getIntent().getExtras();
@@ -234,7 +240,12 @@ public class MenuInicial extends AppCompatActivity
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                //horaAgendamento = SimpleDateFormat(auxLstProfissionaisHorario.get(i).toString());
+                horaAgendamento = auxLstProfissionaisHorario.get(i);
+                //SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm:ss");
+
+                //String dateAsString = dateFormatter.format(dataRecebida);
+                timeAsString = timeFormatter.format(horaAgendamento);
 
             }
 
@@ -415,8 +426,8 @@ public class MenuInicial extends AppCompatActivity
                     String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/GET_UNIDADES_2";
                     String OPERATION_NAME = "GET_UNIDADES_2";
                     String WDSL_TARGET_NAMESPACE = "http://www.gestaospa.com.br/PROD/WebSrv/";
-                    //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
-                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
+                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+                    //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
 
                     WebService objWs = new WebService();
                     objWs.setSOAP_ACTION(SOAP_ACTION);
@@ -487,8 +498,8 @@ public class MenuInicial extends AppCompatActivity
                     String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/GET_SERVICOS_2";
                     String OPERATION_NAME = "GET_SERVICOS_2";
                     String WDSL_TARGET_NAMESPACE = "http://www.gestaospa.com.br/PROD/WebSrv/";
-                    //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
-                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
+                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+                    //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
 
                     WebService objWs = new WebService();
                     objWs.setSOAP_ACTION(SOAP_ACTION);
@@ -545,8 +556,8 @@ public class MenuInicial extends AppCompatActivity
                     String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/GET_PROFISSIONAIS_2";
                     String OPERATION_NAME = "GET_PROFISSIONAIS_2";
                     String WDSL_TARGET_NAMESPACE = "http://www.gestaospa.com.br/PROD/WebSrv/";
-                    //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
-                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
+                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+                    //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
 
                     WebService objWs = new WebService();
                     objWs.setSOAP_ACTION(SOAP_ACTION);
@@ -603,8 +614,8 @@ public class MenuInicial extends AppCompatActivity
                     String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/GET_HORARIO_LIVRE_PROFISSIONAL_2";
                     String OPERATION_NAME = "GET_HORARIO_LIVRE_PROFISSIONAL_2";
                     String WDSL_TARGET_NAMESPACE = "http://www.gestaospa.com.br/PROD/WebSrv/";
-                    //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
-                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
+                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+                    //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
 
                     WebService objWs = new WebService();
                     objWs.setSOAP_ACTION(SOAP_ACTION);
@@ -671,7 +682,7 @@ public class MenuInicial extends AppCompatActivity
                     objWs.setSOAP_ADDRESS(SOAP_ADDRESS);
 
                     resultadoAgendamento = objWs.setAgendamento(COD_EMPRESA, COD_FILIAL, 0, cod_cliente,
-                            codServicoSelecionado,codProfissionalSelecionado,dataRecebida, "");
+                            codServicoSelecionado,codProfissionalSelecionado,dataRecebida, timeAsString);
 
                     resultadoAgendamento = resultadoAgendamento.replace("\"","");
 
@@ -711,17 +722,5 @@ public class MenuInicial extends AppCompatActivity
         dataRecebida = data.getData();
         txv_data.setText("Data selecionada: " + dataRecebida);
 
-    }
-
-    //Recebe Cod_Cliente
-    @Subscribe
-    public void onEventRecebeDadosLoginCodCliente(Eventos.RecebeDadosLoginCodCliente COD_CLIENTE){
-        cod_cliente = COD_CLIENTE.getCOD_CLIENTE();
-    }
-
-    //Recebe nome do cliente
-    @Subscribe
-    public void onEventRecebeDadosLoginNomeCliente(Eventos.RecebeDadosLoginNomeCliente NOME){
-        nome = NOME.getNOME();
     }
 }

@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.brasil.spa.Utils.Eventos;
+import br.com.brasil.spa.Utils.Sessao;
 
 /**
  * Created by abadari on 27/10/2016.
@@ -130,7 +131,8 @@ public class Login extends AppCompatActivity implements Runnable{
         String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/LOGIN_3";
         String OPERATION_NAME = "LOGIN_3";
         String WDSL_TARGET_NAMESPACE = "http://www.gestaospa.com.br/PROD/WebSrv/";
-        String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
+        //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
+        String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
 
         /*String usuario= "claudio@dgm.com.br";
         String senha = "aaa@123";*/
@@ -154,8 +156,14 @@ public class Login extends AppCompatActivity implements Runnable{
             MSG_RETORNO = obj.getString("MSG_RETORNO");
 
             //Passa os dados para o eventbus para pegar em outro lugar
-            EventBus.getDefault().post(new Eventos.RecebeDadosLoginCodCliente(COD_CLIENTE));
-            EventBus.getDefault().post(new Eventos.RecebeDadosLoginNomeCliente(NOME));
+            /*EventBus.getDefault().post(new Eventos.RecebeDadosLoginCodCliente(COD_CLIENTE));
+            EventBus.getDefault().post(new Eventos.RecebeDadosLoginNomeCliente(NOME));*/
+
+            //Passa os dados do cliente para realizar agendamento
+            Sessao.setCodCliente(COD_CLIENTE);
+            Sessao.setNomeCliente(NOME);
+
+
 
 
             Log.e("LOGIN", resultado.toString());

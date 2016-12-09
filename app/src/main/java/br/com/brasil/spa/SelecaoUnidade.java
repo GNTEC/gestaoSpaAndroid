@@ -1,10 +1,8 @@
 package br.com.brasil.spa;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -12,14 +10,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
-
+import org.greenrobot.eventbus.EventBus;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 import br.com.brasil.spa.Entidades.Filial;
 import br.com.brasil.spa.Entidades.Unidade;
+import br.com.brasil.spa.Utils.Eventos;
+import br.com.brasil.spa.Utils.Sessao;
 
 /**
  * Created by Ivan on 07/12/2016.
@@ -37,16 +36,20 @@ public class SelecaoUnidade extends AppCompatActivity {
     private static Integer COD_EMPRESA = 58;
     private String unidadeSelecionada;
     private Integer posicao;
+    private Integer COD_FILIAL;
+    private String enderecoFilial;
 
     //http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_escolha_unidade);
 
         spn_escolha_unidade = (Spinner) findViewById(R.id.spn_escolha_unidade);
         btn_selecionar_unidade = (Button) findViewById(R.id.btn_selecionar_unidade);
+
+        //EventBus.getDefault().register(this);
 
         getUnidade();
 
@@ -77,6 +80,16 @@ public class SelecaoUnidade extends AppCompatActivity {
                     dlg.show();
                     //Toast.makeText(SelecaoUnidade.this, "Selecione a unidade para seu atendimento", Toast.LENGTH_SHORT).show();
                 }else{
+
+                    enderecoFilial = auxLstUnidades.get(posicao).getENDERECO();
+                    //EventBus.getDefault().post(new Eventos.RecebeEnderecoFilial(enderecoFilial));
+                    Sessao.setENDERECO(enderecoFilial);
+
+                    COD_FILIAL = auxLstUnidades.get(posicao).getCOD_FILIAL();
+                    //EventBus.getDefault().post(new Eventos.RecebeCodFilial(COD_FILIAL));
+
+                    Sessao.setCodFilial(COD_FILIAL);
+
                     Intent intent = new Intent(SelecaoUnidade.this, MenuInicial.class);
                     intent.putExtra("pUnidade", posicao);
                     startActivity(intent);

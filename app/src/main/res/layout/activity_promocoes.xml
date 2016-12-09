@@ -50,7 +50,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:textSize="18sp"
-            android:id="@+id/promo_2"
+            android:id="@+id/txv_promo_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left"

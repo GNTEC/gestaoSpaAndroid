@@ -23,6 +23,23 @@ public class Eventos {
         }
     }
 
+    public static final class RecebeCodFilial{
+
+        Integer codFilial;
+
+        public RecebeCodFilial(Integer codFilial){
+            this.codFilial = codFilial;
+        }
+
+        public Integer getCodFilial() {
+            return codFilial;
+        }
+
+        public void setCodFilial(Integer codFilial) {
+            this.codFilial = codFilial;
+        }
+    }
+
     public static final class RecebeDadosLoginCodCliente{
 
         Integer COD_CLIENTE;
@@ -57,4 +74,24 @@ public class Eventos {
             this.NOME = NOME;
         }
     }
+
+
+
+    public static final class RecebeEnderecoFilial{
+        String endereco;
+
+        public RecebeEnderecoFilial(String endereco){
+            this.endereco = endereco;
+        }
+
+        public String getEndereco() {
+            return endereco;
+        }
+
+        public void setEndereco(String endereco) {
+            this.endereco = endereco;
+        }
+    }
+
+
 }
