@@ -388,4 +388,48 @@ public class WebService {
 
         return response.toString();
     }
+
+    public String getAgendamentos(Integer cod_empresa, Integer cod_filial, Integer cod_cliente){
+
+        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE, OPERATION_NAME);
+
+        PropertyInfo COD_EMPRESA = new PropertyInfo();
+        COD_EMPRESA.setName("COD_EMPRESA");
+        COD_EMPRESA.setValue(cod_empresa);
+        COD_EMPRESA.type = PropertyInfo.INTEGER_CLASS;
+        request.addProperty(COD_EMPRESA);
+
+        PropertyInfo COD_FILIAL = new PropertyInfo();
+        COD_FILIAL.setName("COD_FILIAL");
+        COD_FILIAL.setValue(cod_filial);
+        COD_FILIAL.type = PropertyInfo.INTEGER_CLASS;
+        request.addProperty(COD_FILIAL);
+
+        PropertyInfo COD_CLIENTE = new PropertyInfo();
+        COD_CLIENTE.setName("COD_CLIENTE");
+        COD_CLIENTE.setValue(cod_cliente);
+        COD_CLIENTE.type = PropertyInfo.INTEGER_CLASS;
+        request.addProperty(COD_CLIENTE);
+
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+        envelope.dotNet = true;
+
+        envelope.setOutputSoapObject(request);
+
+        HttpTransportSE transportSE = new HttpTransportSE(SOAP_ADDRESS);
+        Object response = null;
+
+        try{
+
+            transportSE.call(SOAP_ACTION, envelope);
+            response = envelope.getResponse();
+
+        }catch (Exception ex){
+            Log.e("WebService: " , ex.toString());
+            response = ex.toString();
+        }
+
+        return response.toString();
+    }
+
 }

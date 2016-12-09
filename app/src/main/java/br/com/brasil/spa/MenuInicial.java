@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.NotificationCompatSideChannelService;
+import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -22,9 +22,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,8 +31,11 @@ import org.greenrobot.eventbus.Subscribe;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import br.com.brasil.spa.Entidades.Filial;
@@ -95,7 +96,8 @@ public class MenuInicial extends AppCompatActivity
     //AGENDAMENTO
     private String resultadoAgendamento;
     private String horaAgendamento;
-    private String timeAsString;
+    private String dateString;
+    private String timeString;
 
     //Dados Login
     private Integer cod_cliente;
@@ -240,12 +242,45 @@ public class MenuInicial extends AppCompatActivity
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                horaAgendamento = auxLstProfissionaisHorario.get(i);
-                //SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
-                SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm:ss");
+                if(!auxLstProfissionaisHorario.get(i).equals("Selecione") &&
+                        !auxLstProfissionaisHorario.get(i).equals("Sem horários para exibição")) {
 
-                //String dateAsString = dateFormatter.format(dataRecebida);
-                timeAsString = timeFormatter.format(horaAgendamento);
+                    horaAgendamento = auxLstProfissionaisHorario.get(i);
+
+                   // Date date = toDate(horaAgendamento);
+
+
+                    DateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+                    try {
+                        Date date = formato.parse(horaAgendamento);
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                        dateString = dateFormat.format(date);
+                        dateFormat.applyPattern("HH:mm:ss");
+                        timeString = dateFormat.format(date);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
+                    formatarDataTimePicker();
+
+
+                    /*DateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+                    formatter.format(new Date());
+                    DateFormat parser = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                    Date date = null;
+                    try {
+                        date = parser.parse(horaAgendamento);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    int h = date.getHours();
+                    int m = date.getMinutes();
+                    int s = date.getSeconds();
+                    timeAsString = String.valueOf( h + ":" + m + ":" + s);*/
+
+
+                }
 
             }
 
@@ -256,6 +291,23 @@ public class MenuInicial extends AppCompatActivity
         });
     }
 
+
+    public void formatarDataTimePicker(){
+
+        DateFormat formato1 = new SimpleDateFormat("dd/MM/yyyy");
+        dateString = "";
+
+        try {
+            Date date1 = formato1.parse(dataRecebida);
+            SimpleDateFormat dateFormat1 = new SimpleDateFormat("dd/MM/yyyy");
+            dateFormat1.applyPattern("dd/MM/yyyy");
+            dateString = dateFormat1.format(date1);
+                        /*dateFormat.applyPattern("HH:mm:ss");
+                        timeString = dateFormat.format(date);*/
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void travaSpinners() {
 
@@ -682,7 +734,7 @@ public class MenuInicial extends AppCompatActivity
                     objWs.setSOAP_ADDRESS(SOAP_ADDRESS);
 
                     resultadoAgendamento = objWs.setAgendamento(COD_EMPRESA, COD_FILIAL, 0, cod_cliente,
-                            codServicoSelecionado,codProfissionalSelecionado,dataRecebida, timeAsString);
+                            codServicoSelecionado,codProfissionalSelecionado,dateString, timeString);
 
                     resultadoAgendamento = resultadoAgendamento.replace("\"","");
 
@@ -702,7 +754,9 @@ public class MenuInicial extends AppCompatActivity
 
     public  void gotoResultadoAgendamento(){
 
-        if (resultadoAgendamento.equals("OK")){
+        if (resultadoAgendamento.equals("Agendamento realizado com sucesso.")){
+
+            Toast.makeText(this, resultadoAgendamento, Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(this, ResultadoAgendamento.class);
             startActivity(intent);
