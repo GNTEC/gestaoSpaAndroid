@@ -34,7 +34,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="6dba300e650092791d92a26607ea8907a088e26a">
+        sha1="3cf97ee3c089edc6fd27b689047a85fd9d4fdbfe">
         <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8fdae4f578647e7cc795b0caf3be591baa176fea\classes.dex" />
     </item>
     <item
@@ -214,7 +214,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="244aad835479b41b21e2c952ae1d503ccc76b123">
+        sha1="86d09d3ead2c4424f08cfdcb358b48bdfc56ec57">
         <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_3580093750bc503b9d1d054ab9e60d1c7ce0ac2a\classes.dex" />
     </item>
     <item

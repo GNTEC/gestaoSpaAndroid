@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -13,6 +15,15 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.brasil.spa.Adapters.AgendamentoAdapter;
+import br.com.brasil.spa.Entidades.Agendamento;
+import br.com.brasil.spa.Entidades.Cliente;
+import br.com.brasil.spa.Entidades.Data;
+import br.com.brasil.spa.Entidades.Profissionais;
+import br.com.brasil.spa.Entidades.Servicos;
 import br.com.brasil.spa.Utils.Sessao;
 
 /**
@@ -22,12 +33,15 @@ import br.com.brasil.spa.Utils.Sessao;
 public class ResultadoAgendamento extends AppCompatActivity {
 
     private Integer COD_EMPRESA = 58;
+    private List<Agendamento> lstAgendamento;
+    private RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultado_agendamento);
 
+        mRecyclerView = (RecyclerView) findViewById(R.id.rv_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_resultado);
         setSupportActionBar(toolbar);
 
@@ -36,11 +50,28 @@ public class ResultadoAgendamento extends AppCompatActivity {
 
         getAgendamento();
 
+        /*mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                LinearLayoutManager llm = (LinearLayoutManager) mRecyclerView.getLayoutManager();
+                AgendamentoAdapter agendamentoAdapter = (AgendamentoAdapter) mRecyclerView.getAdapter();
+
+            }
+        });*/
+
     }
 
     public void onClickNovoAgendamento(View v){
 
-        Intent intent = new Intent(this, MenuInicial.class);
+        Intent intent = new Intent(this, SelecaoUnidade.class);
         startActivity(intent);
 
         //Toast.makeText(this, "Realizar outro agendameto", Toast.LENGTH_SHORT).show();
@@ -56,69 +87,80 @@ public class ResultadoAgendamento extends AppCompatActivity {
 
 
     public void getAgendamento() {
+
         new Thread() {
             @Override
             public void run() {
                 try {
 
+                    //constantes webservice
                     String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/GET_AGENDAMENTOS_2";
                     String OPERATION_NAME = "GET_AGENDAMENTOS_2";
                     String WDSL_TARGET_NAMESPACE = "http://www.gestaospa.com.br/PROD/WebSrv/";
                     String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
-                    //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
 
+                    //configuração da request
                     WebService objWs = new WebService();
                     objWs.setSOAP_ACTION(SOAP_ACTION);
                     objWs.setOPERATION_NAME(OPERATION_NAME);
                     objWs.setWSDL_TARGET_NAMESPACE(WDSL_TARGET_NAMESPACE);
                     objWs.setSOAP_ADDRESS(SOAP_ADDRESS);
 
+                    //pega as constantes da Sessao
                     Integer cod_filial = Sessao.getCodFilial();
                     Integer cod_cliente = Sessao.getCodCliente();
 
+                    //resultado da soap
                     String resultadoAgendamentos = objWs.getAgendamentos(COD_EMPRESA, cod_filial, cod_cliente);
-                    //Log.e("Resultado Agendamentos: ", resultadoAgendamentos);
+                    //pega o array devolvido
+                    JSONArray arrAgendamento = new JSONArray(resultadoAgendamentos);
+                    //listagem que vai receber tudo
+                    lstAgendamento = new ArrayList<Agendamento>();
 
-                    JSONObject obj = new JSONObject(resultadoAgendamentos);
-                    JSONArray arrFiliais = obj.getJSONArray("FILIAL");
+                    for(int i = 0; i < arrAgendamento.length(); i++){
 
-                   /* if (obj.length() != 0) {
-                        lstUnidades = new ArrayList<Unidade>();
-                        auxLstUnidades = new ArrayList<Filial>();
-                        for (int i = 0; i < obj.length(); i++) {
+                        //instancia a classe agendamento
+                        Agendamento agendamento = new Agendamento();
 
-                            lstUnidades.add(new Unidade(obj.getInt("COD_EMPRESA"),
-                                    obj.getString("NOME_EMPRESA")));
+                        //converte para jsonObject
+                        JSONObject obj = arrAgendamento.getJSONObject(i);
 
-                            for (int g = 0; g < arrFiliais.length(); g++) {
+                        //seta os dados locais na classe agendamento
+                        agendamento.setCOD_AGENDAMENTO(obj.getInt("COD_AGENDAMENTO"));
+                        agendamento.setDATA(obj.getString("DATA"));
+                        agendamento.setHORA(obj.getString("HORA"));
+                        agendamento.setSTATUS(obj.getString("STATUS"));
 
-                                JSONObject jsonResposta = arrFiliais.getJSONObject(g);
+                        //manda o objeto preenchido
+                        JSONObject objP = obj.getJSONObject("PROFISSIONAL");
+                        agendamento.setPROFISSIONAIS(new Profissionais(objP.getInt("COD_PROFISSIONAL"),
+                                    objP.getString("NOME")));
 
-                                auxLstUnidades.add(new Filial(jsonResposta.getInt("COD_EMPRESA_FILIAL"),
-                                        jsonResposta.getInt("COD_FILIAL"),
-                                        jsonResposta.getString("NOME_FILIAL"),
-                                        jsonResposta.getString("ENDERECO")));
+                        //manda o objeto preenchido
+                        JSONObject objS = obj.getJSONObject("SERVICO");
+                        agendamento.setSERVICOS(new Servicos(objS.getInt("COD_SERVICO"),
+                                objS.getString("DSC_SERVICO"), objS.getDouble("VALOR")));
 
+                        //manda o objeto preenchido
+                        JSONObject objC = obj.getJSONObject("CLIENTE");
+                        agendamento.setCLIENTE(new Cliente(objC.getInt("COD_CLIENTE"),
+                                objC.getString("NOME"), objC.getString("MSG_RETORNO")));
+
+                        //adição na listagem do objeto completo
+                        lstAgendamento.add(agendamento);
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                mRecyclerView.setHasFixedSize(true);
+                                LinearLayoutManager llm = new LinearLayoutManager(ResultadoAgendamento.this);
+                                llm.setOrientation(LinearLayoutManager.VERTICAL);
+                                mRecyclerView.setLayoutManager(llm);
+                                AgendamentoAdapter agendamentoAdapter = new AgendamentoAdapter(ResultadoAgendamento.this, lstAgendamento);
+                                mRecyclerView.setAdapter(agendamentoAdapter);
                             }
-                        }
+                        });
                     }
-
-                    lstSpnUnidade = new ArrayList<String>();
-                    lstSpnUnidade.add("Selecione");
-
-                    for (int j = 0; j < auxLstUnidades.size(); j++) {
-                        lstSpnUnidade.add(auxLstUnidades.get(j).getNOME_FILIAL());
-                    }
-
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            preencheSpinnerUnidade();
-                            COD_FILIAL = auxLstUnidades.get(posicao).getCOD_FILIAL();
-                            spnU.setSelection(posicao);
-                            getServicos(COD_FILIAL);
-                        }
-                    });*/
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -126,5 +168,4 @@ public class ResultadoAgendamento extends AppCompatActivity {
             }
         }.start();
     }
-
 }

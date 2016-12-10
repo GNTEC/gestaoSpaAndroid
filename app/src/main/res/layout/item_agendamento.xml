@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:text="Codigo Agendamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txv_codigo_agendamento1"
+            android:layout_marginLeft="26dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:text="Nome profissional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txv_codigo_agendamento1"
+            android:layout_alignLeft="@+id/txv_codigo_agendamento1"
+            android:layout_alignStart="@+id/txv_codigo_agendamento1"
+            android:layout_marginTop="12dp"
+            android:id="@+id/txv_nome_profissional" />
+
+        <TextView
+            android:text="Descricao Servico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txv_nome_profissional"
+            android:layout_alignLeft="@+id/txv_nome_profissional"
+            android:layout_alignStart="@+id/txv_nome_profissional"
+            android:layout_marginTop="11dp"
+            android:id="@+id/txv_desc_servico" />
+
+        <TextView
+            android:text="Valor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txv_desc_servico"
+            android:layout_alignLeft="@+id/txv_desc_servico"
+            android:layout_alignStart="@+id/txv_desc_servico"
+            android:layout_marginTop="10dp"
+            android:id="@+id/txv_valor" />
+
+        <TextView
+            android:text="Nome Cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:id="@+id/txv_nome_cliente"
+            android:layout_below="@+id/txv_valor"
+            android:layout_alignLeft="@+id/txv_valor"
+            android:layout_alignStart="@+id/txv_valor" />
+
+        <TextView
+            android:text="Data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txv_nome_cliente"
+            android:layout_alignLeft="@+id/txv_nome_cliente"
+            android:layout_alignStart="@+id/txv_nome_cliente"
+            android:layout_marginTop="11dp"
+            android:id="@+id/txv_data" />
+
+        <TextView
+            android:text="Hora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/txv_data"
+            android:layout_toRightOf="@+id/txv_codigo_agendamento1"
+            android:layout_toEndOf="@+id/txv_codigo_agendamento1"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:id="@+id/txv_hora" />
+
+        <TextView
+            android:text="Status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txv_data"
+            android:layout_alignLeft="@+id/txv_data"
+            android:layout_alignStart="@+id/txv_data"
+            android:layout_marginTop="11dp"
+            android:id="@+id/txv_status" />
+
+        <TextView
+            android:text="Gerenciar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txv_status"
+            android:layout_alignLeft="@+id/txv_status"
+            android:layout_alignStart="@+id/txv_status"
+            android:layout_marginTop="10dp"
+            android:id="@+id/txv_gerenciar" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spn_agendamento"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/txv_gerenciar"
+            android:layout_alignLeft="@+id/txv_gerenciar"
+            android:layout_alignStart="@+id/txv_gerenciar"
+            android:layout_toLeftOf="@+id/txv_hora"
+            android:layout_toStartOf="@+id/txv_hora" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:background="#dedede"
+            android:id="@+id/divider"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:text="OK"
+            android:layout_width="120dp"
+            android:id="@+id/btn_gerenciar"
+            android:background="#000000"
+            android:textColor="#ffffff"
+            android:layout_height="32dp"
+            android:layout_alignBottom="@+id/spn_agendamento"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

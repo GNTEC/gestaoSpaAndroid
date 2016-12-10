@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         app:titleTextColor="@color/colorAccent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#4DB6AC"
+        android:background="@drawable/toolbar"
         app:popupTheme="@style/AppTheme.PopupOverlay"> </android.support.v7.widget.Toolbar>
 
     <FrameLayout

@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.text.Html;
 import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
@@ -117,8 +118,12 @@ public class MenuInicial extends AppCompatActivity
         final Drawable upArrow = getResources().getDrawable(R.drawable.mobile_nav);
         upArrow.setColorFilter(Color.parseColor("#ffffff"), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
-        getSupportActionBar().setTitle("Spa Dona Beleza");
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#4DB6AC")));
+        //getSupportActionBar().setTitle("Spa Dona Beleza");
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#232323'>Spa Dona Beleza </font>"));
+        //#4DB6AC
+        //getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#4DB6AC")));
+        Drawable d =getResources().getDrawable(R.drawable.toolbar);
+        getSupportActionBar().setBackgroundDrawable(d);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         EventBus.getDefault().register(this);
@@ -378,12 +383,14 @@ public class MenuInicial extends AppCompatActivity
             case R.id.rdnSim:
                 if (checked)
                     txtProf.setVisibility(View.VISIBLE);
-                spnP.setVisibility(View.VISIBLE);
-                //preencheSpinnerProfissional();
-                spnP.setEnabled(true);
+                    spnP.setVisibility(View.VISIBLE);
+                    //preencheSpinnerProfissional();
+                    spnP.setEnabled(true);
                 if (dataRecebida.equals("a")) {
                     rb2.setChecked(true);
                     //Toast.makeText(MenuInicial.this, "Selecione uma data", Toast.LENGTH_SHORT).show();
+                    txtProf.setVisibility(View.GONE);
+                    spnP.setVisibility(View.GONE);
                     AlertDialog.Builder dlg = new AlertDialog.Builder(MenuInicial.this);
                     dlg.setMessage("Você deve selecionar uma data para escolher o profissional");
                     dlg.setNeutralButton("OK", null);
