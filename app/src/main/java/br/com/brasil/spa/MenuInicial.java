@@ -86,10 +86,10 @@ public class MenuInicial extends AppCompatActivity
 
     //seleções spinners
     private String filialSelecionada;
-    private String servicoSelecionado;
+    private String servicoSelecionado="";
     private Integer codServicoSelecionado;
     private String profissionalSelecionado;
-    private String horarioSelecionado;
+    private String horarioSelecionado="";
     private Integer COD_FILIAL;
     private String dataRecebida = "a";
     private Integer codProfissionalSelecionado;
@@ -99,6 +99,9 @@ public class MenuInicial extends AppCompatActivity
     private String horaAgendamento;
     private String dateString;
     private String timeString;
+
+    //sem profissional
+    private boolean semProfissional = false;
 
     //Dados Login
     private Integer cod_cliente;
@@ -115,15 +118,17 @@ public class MenuInicial extends AppCompatActivity
 
         }
         setSupportActionBar(toolbar);
+
         final Drawable upArrow = getResources().getDrawable(R.drawable.mobile_nav);
-        upArrow.setColorFilter(Color.parseColor("#ffffff"), PorterDuff.Mode.SRC_ATOP);
+        upArrow.setColorFilter(Color.parseColor("#d0d0d0"), PorterDuff.Mode.SRC_ATOP);
+        //upArrow.setColorFilter(getResources().getColor(R.color.colorcustom), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
-        //getSupportActionBar().setTitle("Spa Dona Beleza");
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#232323'>Spa Dona Beleza </font>"));
+        getSupportActionBar().setTitle("SPA Dona Beleza");
+        //getSupportActionBar().setTitle(Html.fromHtml("<font color='#232323'>Spa Dona Beleza </font>"));
         //#4DB6AC
-        //getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#4DB6AC")));
-        Drawable d =getResources().getDrawable(R.drawable.toolbar);
-        getSupportActionBar().setBackgroundDrawable(d);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#4DB6AC")));
+        //Drawable d =getResources().getDrawable(R.drawable.toolbar);
+        //getSupportActionBar().setBackgroundDrawable(d);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         EventBus.getDefault().register(this);
@@ -152,6 +157,7 @@ public class MenuInicial extends AppCompatActivity
                 FragmentManager fm = MenuInicial.this.getSupportFragmentManager();
                 DateDialog dateDialog = new DateDialog();
                 dateDialog.show(fm, "TAG");
+                //formatarDataTimePicker();
             }
         });
 
@@ -206,8 +212,10 @@ public class MenuInicial extends AppCompatActivity
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
                 if (!auxLstServicos.get(i).equals("Selecione") && !auxLstServicos.get(i).equals("Sem servicos para exibição")) {
+
                     servicoSelecionado = auxLstServicos.get(i);
-                    codServicoSelecionado = lstServicos.get(i).getCodServico();
+                    codServicoSelecionado = lstServicos.get(i-1).getCodServico();
+                    Log.e("SERVICO: ", codServicoSelecionado + " " + servicoSelecionado);
                     //Toast.makeText(MenuInicial.this, servicoSelecionado, Toast.LENGTH_SHORT).show();
 
                 }
@@ -228,7 +236,7 @@ public class MenuInicial extends AppCompatActivity
                 if (!auxLstProfissionais.get(i).equals("Selecione") && !auxLstProfissionais.get(i).equals("Sem profissionais para exibição")) {
 
                     profissionalSelecionado = auxLstProfissionais.get(i);
-                    codProfissionalSelecionado = lstProfissionais.get(i).getCOD_PROFISSIONAL();
+                    codProfissionalSelecionado = lstProfissionais.get(i-1).getCOD_PROFISSIONAL();
                     getHorario();
                     spnH.setEnabled(true);
 
@@ -252,9 +260,6 @@ public class MenuInicial extends AppCompatActivity
 
                     horaAgendamento = auxLstProfissionaisHorario.get(i);
 
-                   // Date date = toDate(horaAgendamento);
-
-
                     DateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
                     try {
@@ -269,24 +274,10 @@ public class MenuInicial extends AppCompatActivity
 
                     formatarDataTimePicker();
 
-
-                    /*DateFormat formatter = new SimpleDateFormat("HH:mm:ss");
-                    formatter.format(new Date());
-                    DateFormat parser = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-                    Date date = null;
-                    try {
-                        date = parser.parse(horaAgendamento);
-                    } catch (ParseException e) {
-                        e.printStackTrace();
+                    if(semProfissional == true){
+                        codProfissionalSelecionado =lstProfissionaisHorario.get(i-1).getCOD_PROFISSIONAL();
                     }
-                    int h = date.getHours();
-                    int m = date.getMinutes();
-                    int s = date.getSeconds();
-                    timeAsString = String.valueOf( h + ":" + m + ":" + s);*/
-
-
                 }
-
             }
 
             @Override
@@ -363,9 +354,9 @@ public class MenuInicial extends AppCompatActivity
         ArrayAdapter<String> adapterProfissionaisHorario = new ArrayAdapter<String>(this,
                 R.layout.support_simple_spinner_dropdown_item, auxLstProfissionaisHorario);
         adapterProfissionaisHorario.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        if(auxLstProfissionais.size()>0) {
+        //if(auxLstProfissionais.size()>0) {
             spnH.setAdapter(adapterProfissionaisHorario);
-        }
+        //}
     }
 
     public void onRadioButtonClicked(View v) {
@@ -381,31 +372,54 @@ public class MenuInicial extends AppCompatActivity
         switch (v.getId()) {
 
             case R.id.rdnSim:
-                if (checked)
-                    txtProf.setVisibility(View.VISIBLE);
-                    spnP.setVisibility(View.VISIBLE);
-                    //preencheSpinnerProfissional();
-                    spnP.setEnabled(true);
-                if (dataRecebida.equals("a")) {
-                    rb2.setChecked(true);
-                    //Toast.makeText(MenuInicial.this, "Selecione uma data", Toast.LENGTH_SHORT).show();
-                    txtProf.setVisibility(View.GONE);
-                    spnP.setVisibility(View.GONE);
-                    AlertDialog.Builder dlg = new AlertDialog.Builder(MenuInicial.this);
-                    dlg.setMessage("Você deve selecionar uma data para escolher o profissional");
-                    dlg.setNeutralButton("OK", null);
-                    dlg.show();
+                if (checked) {
 
-                } else {
+                    if (dataRecebida.equals("a") || servicoSelecionado.equals("Selecione")) {
 
-                    getProfissionais(COD_EMPRESA, codServicoSelecionado, dataRecebida);
+                        rb2.setChecked(false);
+                        rb1.setChecked(false);
+                        txtProf.setVisibility(View.GONE);
+                        spnP.setVisibility(View.GONE);
+
+                        AlertDialog.Builder dlg = new AlertDialog.Builder(MenuInicial.this);
+                        dlg.setMessage("Você deve selecionar uma data e um serviço");
+                        dlg.setNeutralButton("OK", null);
+                        dlg.show();
+
+                    } else {
+
+                        txtProf.setVisibility(View.VISIBLE);
+                        spnP.setVisibility(View.VISIBLE);
+                        spnP.setEnabled(true);
+                        getProfissionais(COD_EMPRESA, codServicoSelecionado, dataRecebida);
+
+                    }
                 }
                 break;
 
             case R.id.rdnNao:
-                if (checked)
-                    txtProf.setVisibility(View.GONE);
-                spnP.setVisibility(View.GONE);
+                if (checked) {
+
+                    if (dataRecebida.equals("a") || servicoSelecionado.equals("Selecione")) {
+
+                        rb2.setChecked(false);
+                        rb1.setChecked(false);
+                        txtProf.setVisibility(View.GONE);
+                        spnP.setVisibility(View.GONE);
+
+                        AlertDialog.Builder dlg = new AlertDialog.Builder(MenuInicial.this);
+                        dlg.setMessage("Você deve selecionar uma data e um serviço");
+                        dlg.setNeutralButton("OK", null);
+                        dlg.show();
+
+                    }else {
+
+                        txtProf.setVisibility(View.GONE);
+                        spnP.setVisibility(View.GONE);
+                        getHorarioSemProfissional();
+
+                    }
+                }
 
                 break;
         }
@@ -451,10 +465,10 @@ public class MenuInicial extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            Intent intent = new Intent(this, Historico.class);
+            Intent intent = new Intent(this, ResultadoAgendamento.class);
             startActivity(intent);
-        } else if (id == R.id.nav_gallery) {
-            Intent intent = new Intent(this, MenuInicial.class);
+        } else if (id == R.id.nav_agendar) {
+            Intent intent = new Intent(this, SelecaoUnidade.class);
             startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
             Intent intent = new Intent(this, Localizacao.class);
@@ -710,6 +724,7 @@ public class MenuInicial extends AppCompatActivity
                                 auxLstProfissionaisHorario.add("Sem horários para exibição");
                             }
                             preencheSpinnerProfissionalHorarios();
+                            semProfissional = false;
                         }
                     });
 
@@ -720,19 +735,21 @@ public class MenuInicial extends AppCompatActivity
         }.start();
     }
 
-    public void onclicAgendar(View v) {
-
-        new Thread() {
-
+    public void getHorarioSemProfissional(){
+        new Thread(){
             @Override
-            public void run() {
+            public void run(){
 
                 try {
 
-                    String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/SET_AGENDAMENTO_2";
-                    String OPERATION_NAME = "SET_AGENDAMENTO_2";
+                    lstProfissionaisHorario = new ArrayList<ProfissionaisHorario>();
+                    auxLstProfissionaisHorario = new ArrayList<String>();
+
+                    String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/GET_HORARIO_LIVRE_2";
+                    String OPERATION_NAME = "GET_HORARIO_LIVRE_2";
                     String WDSL_TARGET_NAMESPACE = "http://www.gestaospa.com.br/PROD/WebSrv/";
                     String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+                    //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
 
                     WebService objWs = new WebService();
                     objWs.setSOAP_ACTION(SOAP_ACTION);
@@ -740,23 +757,93 @@ public class MenuInicial extends AppCompatActivity
                     objWs.setWSDL_TARGET_NAMESPACE(WDSL_TARGET_NAMESPACE);
                     objWs.setSOAP_ADDRESS(SOAP_ADDRESS);
 
-                    resultadoAgendamento = objWs.setAgendamento(COD_EMPRESA, COD_FILIAL, 0, cod_cliente,
-                            codServicoSelecionado,codProfissionalSelecionado,dateString, timeString);
+                    formatarDataTimePicker();
 
-                    resultadoAgendamento = resultadoAgendamento.replace("\"","");
+                    String resultadoHorarioLivre = objWs.getHorarioLivre(COD_EMPRESA, COD_FILIAL, dateString);
+
+                    JSONArray jsonArray = new JSONArray(resultadoHorarioLivre);
+
+                    if (jsonArray.length() > 0) {
+
+                        auxLstProfissionaisHorario.add("Selecione");
+
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jsonObjectResposta = jsonArray.getJSONObject(i);
+                            lstProfissionaisHorario.add(new ProfissionaisHorario(jsonObjectResposta.getInt("COD_PROFISSIONAL"),
+                                    jsonObjectResposta.getString("DT_INI"),
+                                    jsonObjectResposta.getString("DT_FIM")));
+
+                            //preenche lista auxiliar para o spinner profissionais com os horarios do profissional
+                            //auxLstProfissionaisHorario.add("De: " + lstProfissionaisHorario.get(i).getDT_INI() + " até " + lstProfissionaisHorario.get(i).getDT_FIM());
+                            auxLstProfissionaisHorario.add(lstProfissionaisHorario.get(i).getDT_INI());
+
+                        }
+                    }
 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            gotoResultadoAgendamento();
+                            if(auxLstProfissionaisHorario.size() == 0){
+                                auxLstProfissionaisHorario.add("Sem horários para exibição");
+                            }
+                            preencheSpinnerProfissionalHorarios();
+                            spnH.setEnabled(true);
+                            semProfissional = true;
                         }
                     });
 
-                } catch (Exception e) {
+                }catch (Exception e){
                     e.printStackTrace();
                 }
             }
         }.start();
+    }
+
+    public void onclicAgendar(View v) {
+
+        if(servicoSelecionado.equals("Selecione") && servicoSelecionado.equals("")
+                || dataRecebida.equals("a") || horarioSelecionado.equals("Selecione") && horarioSelecionado.equals("")){
+
+            AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+            dlg.setMessage("Antes de agendar você deve selecionar um serviço, selecionar a data, selecionar uma opção para o profissional (Sim ou não) e selecionar um horario");
+            dlg.setNeutralButton("OK", null);
+            dlg.show();
+
+        }else {
+            new Thread() {
+                @Override
+                public void run() {
+                    try {
+
+                        String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/SET_AGENDAMENTO_2";
+                        String OPERATION_NAME = "SET_AGENDAMENTO_2";
+                        String WDSL_TARGET_NAMESPACE = "http://www.gestaospa.com.br/PROD/WebSrv/";
+                        String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+
+                        WebService objWs = new WebService();
+                        objWs.setSOAP_ACTION(SOAP_ACTION);
+                        objWs.setOPERATION_NAME(OPERATION_NAME);
+                        objWs.setWSDL_TARGET_NAMESPACE(WDSL_TARGET_NAMESPACE);
+                        objWs.setSOAP_ADDRESS(SOAP_ADDRESS);
+
+                        resultadoAgendamento = objWs.setAgendamento(COD_EMPRESA, COD_FILIAL, 0, cod_cliente,
+                                codServicoSelecionado, codProfissionalSelecionado, dateString, timeString);
+
+                        resultadoAgendamento = resultadoAgendamento.replace("\"", "");
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                gotoResultadoAgendamento();
+                            }
+                        });
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }.start();
+        }
     }
 
     public  void gotoResultadoAgendamento(){

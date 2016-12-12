@@ -157,6 +157,9 @@ public class ResultadoAgendamento extends AppCompatActivity {
                                 llm.setOrientation(LinearLayoutManager.VERTICAL);
                                 mRecyclerView.setLayoutManager(llm);
                                 AgendamentoAdapter agendamentoAdapter = new AgendamentoAdapter(ResultadoAgendamento.this, lstAgendamento);
+                                //atualiza o adapter
+                                agendamentoAdapter.notifyDataSetChanged();
+                                //seta o adapter
                                 mRecyclerView.setAdapter(agendamentoAdapter);
                             }
                         });

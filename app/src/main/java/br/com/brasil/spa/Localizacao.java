@@ -2,6 +2,7 @@
 package br.com.brasil.spa;
 
 import android.app.AlertDialog;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;

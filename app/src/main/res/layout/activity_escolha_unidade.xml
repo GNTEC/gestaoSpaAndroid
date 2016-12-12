@@ -9,8 +9,9 @@
         android:id="@+id/toolbar_loading"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/toolbar"
-        app:popupTheme="@style/AppTheme.PopupOverlay"> </android.support.v7.widget.Toolbar>
+        android:background="#4DB6AC"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+    </android.support.v7.widget.Toolbar>
 
     <ImageView
         android:layout_marginTop="16dp"
@@ -57,7 +58,7 @@
         android:layout_height="wrap_content"
         android:background="#000000"
         android:textColor="#ffffff"
-        android:text="Selecionar"
+        android:text="Agendar"
         android:layout_above="@+id/img_rodape"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

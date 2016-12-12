@@ -10,7 +10,7 @@
             android:title="Unidade"
             />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_agendar"
             android:title="Agendar" />
         <item
             android:id="@+id/nav_slideshow"

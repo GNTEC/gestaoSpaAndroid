@@ -8,10 +8,11 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_promo"
         android:layout_width="match_parent"
-        app:titleTextColor="@color/colorAccent"
+        app:titleTextColor="#ffffff"
         android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/toolbar"
-        app:popupTheme="@style/AppTheme.PopupOverlay"> </android.support.v7.widget.Toolbar>
+        android:background="#4DB6AC"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+    </android.support.v7.widget.Toolbar>
 
     <TextView
         android:textSize="18sp"

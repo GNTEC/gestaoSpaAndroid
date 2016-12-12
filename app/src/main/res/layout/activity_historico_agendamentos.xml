@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:titleTextColor="@color/colorAccent"
-        android:background="@drawable/toolbar"
+        android:background="#4DB6AC"
         app:popupTheme="@style/AppTheme.PopupOverlay">
     </android.support.v7.widget.Toolbar>
 

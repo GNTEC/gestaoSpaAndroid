@@ -1,22 +1,32 @@
 package br.com.brasil.spa.Adapters;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.brasil.spa.Entidades.Agendamento;
 import br.com.brasil.spa.R;
+import br.com.brasil.spa.ResultadoAgendamento;
+import br.com.brasil.spa.Utils.Sessao;
+import br.com.brasil.spa.WebService;
 
 /**
  * Created by Ivan on 09/12/2016.
@@ -28,6 +38,15 @@ public class AgendamentoAdapter extends RecyclerView.Adapter<AgendamentoAdapter.
     private LayoutInflater mLayoutInflater;
     private List<String> lstSpinner;
     private Context context;
+    private String selecaoSpinner;
+
+    //Set Agengamento
+    private Integer COD_EMPRESA = 58;
+    private Integer COD_FILIAL;
+    private Integer COD_AGENDAMENTO;
+    private Integer status;
+    private String resultadoStatus;
+    private Handler handler;
 
     public AgendamentoAdapter(Context context, List<Agendamento> list){
         this.context = context;
@@ -49,8 +68,7 @@ public class AgendamentoAdapter extends RecyclerView.Adapter<AgendamentoAdapter.
     }
 
     @Override
-    public void onBindViewHolder(mViewHolder holder, int position) {
-
+    public void onBindViewHolder(mViewHolder holder, final int position) {
 
         holder.txv_codigo_agendamento1.setText("Código Agendamento: " + String.valueOf(mList.get(position).getCOD_AGENDAMENTO()));
         holder.txv_nome_profissional.setText("Profissional: " + String.valueOf(mList.get(position).getPROFISSIONAIS().getNOME()));
@@ -65,6 +83,44 @@ public class AgendamentoAdapter extends RecyclerView.Adapter<AgendamentoAdapter.
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         holder.spn_agendamento.setAdapter(adapter);
 
+        holder.spn_agendamento.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                selecaoSpinner = lstSpinner.get(i);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                //NADA
+            }
+        });
+
+        holder.btn_gerenciar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                COD_FILIAL = Sessao.getCodFilial();
+                COD_AGENDAMENTO = mList.get(position).getCOD_AGENDAMENTO();
+
+                if(selecaoSpinner.equals("Selecione")){
+                    AlertDialog.Builder dlg = new AlertDialog.Builder(context);
+                    dlg.setMessage("Selecione uma ação");
+                    dlg.setNeutralButton("OK", null);
+                    dlg.show();
+                }else if(selecaoSpinner.equals("Cancelar")){
+                    status = 0;
+                    setStatusAgendamento();
+
+                }else if(selecaoSpinner.equals("Confirmar")){
+                    status = 1;
+                    setStatusAgendamento();
+
+                }else if(selecaoSpinner.equals("Alterar")){
+                    status = 2;
+                    setStatusAgendamento();
+                }
+            }
+        });
     }
 
     @Override
@@ -101,4 +157,49 @@ public class AgendamentoAdapter extends RecyclerView.Adapter<AgendamentoAdapter.
 
         }
     }
+
+    public void setStatusAgendamento() {
+        handler = new Handler();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                try{
+
+                    String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/SET_AGENDAMENTO_STATUS_2";
+                    String OPERATION_NAME = "SET_AGENDAMENTO_STATUS_2";
+                    String WDSL_TARGET_NAMESPACE = "http://www.gestaospa.com.br/PROD/WebSrv/";
+                    String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
+                    //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
+
+                    WebService objWs = new WebService();
+                    objWs.setSOAP_ACTION(SOAP_ACTION);
+                    objWs.setOPERATION_NAME(OPERATION_NAME);
+                    objWs.setWSDL_TARGET_NAMESPACE(WDSL_TARGET_NAMESPACE);
+                    objWs.setSOAP_ADDRESS(SOAP_ADDRESS);
+
+                    resultadoStatus = objWs.setAgengamentoStatus(COD_EMPRESA, COD_FILIAL, COD_AGENDAMENTO, status);
+                    Log.e("Resultado: ", resultadoStatus);
+
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            AlertDialog.Builder dlg = new AlertDialog.Builder(context);
+                            dlg.setMessage(resultadoStatus);
+                            dlg.setNeutralButton("OK", null);
+                            dlg.show();
+
+                            //TODO- Atualizar a activity (fechar e abrir de novo) testar as rotinas
+                        }
+                    });
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
 }
+
+
