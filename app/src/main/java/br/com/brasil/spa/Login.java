@@ -1,5 +1,6 @@
 package br.com.brasil.spa;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -172,7 +173,7 @@ public class Login extends AppCompatActivity implements Runnable{
                 public void run() {
                     //Toast.makeText(Login.this, resultado, Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
-
+                    logou();
                 }
             });
 
@@ -186,11 +187,24 @@ public class Login extends AppCompatActivity implements Runnable{
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        logou();
     }
 
     public void logou(){
+
+        if(MSG_RETORNO.equals("Senha incorreta")){
+            AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+            dlg.setMessage("Senha incorreta");
+            dlg.setNeutralButton("OK", null);
+            dlg.show();
+        }
+
+        if(MSG_RETORNO.equals("Login não cadastrado")){
+            AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+            dlg.setMessage("Login não cadastrado");
+            dlg.setNeutralButton("OK", null);
+            dlg.show();
+        }
+
         if(MSG_RETORNO.equals("OK")){
             Intent intent = new Intent(Login.this, SelecaoUnidade.class);
             startActivity(intent);
