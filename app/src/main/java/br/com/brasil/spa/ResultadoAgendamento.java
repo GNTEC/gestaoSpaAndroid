@@ -71,7 +71,7 @@ public class ResultadoAgendamento extends AppCompatActivity {
 
     public void onClickNovoAgendamento(View v){
 
-        Intent intent = new Intent(this, SelecaoUnidade.class);
+        Intent intent = new Intent(this, MenuInicial.class);
         startActivity(intent);
 
         //Toast.makeText(this, "Realizar outro agendameto", Toast.LENGTH_SHORT).show();
