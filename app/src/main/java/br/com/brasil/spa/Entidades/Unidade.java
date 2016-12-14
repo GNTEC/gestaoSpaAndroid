@@ -11,25 +11,16 @@ public class Unidade {
 
     private int codEmpresa;
     private String nomeEmpresa;
-    private List<Filial> lstFilial;
+    private List<Filial> lstfilial;
 
-    public Unidade(){
+    public Unidade(int cod_empresa, String nome_empresa){
 
     }
 
-    public Unidade(int codEmpresa, String nomeEmpresa, List<Filial> lstFilial){
+    public Unidade(int codEmpresa, String nomeEmpresa, List<Filial> lstfilial){
         this.codEmpresa = codEmpresa;
         this.nomeEmpresa = nomeEmpresa;
-        this.lstFilial = lstFilial;
-    }
-
-    public Unidade(int codEmpresa, String nomeEmpresa){
-        this.codEmpresa = codEmpresa;
-        this.nomeEmpresa = nomeEmpresa;
-    }
-
-    public List<Filial> getFiliais(){
-        return this.lstFilial;
+        this.lstfilial =  lstfilial;
     }
 
     public int getCodEmpresa() {
@@ -48,12 +39,15 @@ public class Unidade {
         this.nomeEmpresa = nomeEmpresa;
     }
 
-    public List<Filial> getLstFilial() {
-        return lstFilial;
+    public void setCodEmpresa(int codEmpresa) {
+        this.codEmpresa = codEmpresa;
     }
 
-    public void setLstFilial(List<Filial> lstFilial) {
-        this.lstFilial = lstFilial;
+    public List<Filial> getLstfilial() {
+        return lstfilial;
     }
 
+    public void setLstfilial(List<Filial> lstfilial) {
+        this.lstfilial = lstfilial;
+    }
 }

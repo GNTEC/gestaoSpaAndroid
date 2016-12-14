@@ -14,6 +14,8 @@ public class Sessao {
 
     public static String NOME_CLIENTE;
 
+    public static Integer POSICAO;
+
     public static Integer getCodFilial() {
         return COD_FILIAL;
     }
@@ -44,5 +46,13 @@ public class Sessao {
 
     public static void setNomeCliente(String nomeCliente) {
         NOME_CLIENTE = nomeCliente;
+    }
+
+    public static Integer getPOSICAO() {
+        return POSICAO;
+    }
+
+    public static void setPOSICAO(Integer POSICAO) {
+        Sessao.POSICAO = POSICAO;
     }
 }

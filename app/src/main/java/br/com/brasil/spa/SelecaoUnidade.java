@@ -58,7 +58,7 @@ public class SelecaoUnidade extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
                 unidadeSelecionada = lstSpnUnidade.get(i).toString();
-                posicao = i;
+                posicao = i-1;
             }
 
             @Override
@@ -89,9 +89,9 @@ public class SelecaoUnidade extends AppCompatActivity {
                     //EventBus.getDefault().post(new Eventos.RecebeCodFilial(COD_FILIAL));
 
                     Sessao.setCodFilial(COD_FILIAL);
+                    Sessao.setPOSICAO(posicao);
 
                     Intent intent = new Intent(SelecaoUnidade.this, MenuInicial.class);
-                    intent.putExtra("pUnidade", posicao);
                     startActivity(intent);
                 }
             }
@@ -126,7 +126,8 @@ public class SelecaoUnidade extends AppCompatActivity {
                     if (obj.length() != 0) {
                         lstUnidades = new ArrayList<Unidade>();
                         auxLstUnidades = new ArrayList<Filial>();
-                        for (int i = 0; i < obj.length(); i++) {
+
+                        for (int i = 0; i < 1; i++) {
 
                             lstUnidades.add(new Unidade(obj.getInt("COD_EMPRESA"),
                                     obj.getString("NOME_EMPRESA")));

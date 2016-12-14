@@ -137,9 +137,7 @@ public class MenuInicial extends AppCompatActivity
         cod_cliente = Sessao.getCodCliente();
         nome = Sessao.getNomeCliente();
 
-        //Recebe os parametros de unidade
-        Bundle extras = getIntent().getExtras();
-        posicao = extras.getInt("pUnidade");
+        posicao = Sessao.getPOSICAO();
 
         spnU = (Spinner) findViewById(R.id.spn_unidade);
         spnS = (Spinner) findViewById(R.id.spn_servico);
@@ -256,7 +254,7 @@ public class MenuInicial extends AppCompatActivity
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
                 if(!auxLstProfissionaisHorario.get(i).equals("Selecione") &&
-                        !auxLstProfissionaisHorario.get(i).equals("Sem horários para exibição")) {
+                        !auxLstProfissionaisHorario.get(i).equals("Sem horários para exibição") && auxLstProfissionaisHorario.size() > 0) {
 
                     horaAgendamento = auxLstProfissionaisHorario.get(i);
 
@@ -276,6 +274,27 @@ public class MenuInicial extends AppCompatActivity
 
                     if(semProfissional == true){
                         codProfissionalSelecionado =lstProfissionaisHorario.get(i-1).getCOD_PROFISSIONAL();
+                    }
+                }else{
+
+                    horaAgendamento = auxLstProfissionaisHorario.get(i);
+
+                    DateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+                    try {
+                        Date date = formato.parse(horaAgendamento);
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                        dateString = dateFormat.format(date);
+                        dateFormat.applyPattern("HH:mm:ss");
+                        timeString = dateFormat.format(date);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
+                    formatarDataTimePicker();
+
+                    if(semProfissional == true){
+                        codProfissionalSelecionado =lstProfissionaisHorario.get(i).getCOD_PROFISSIONAL();
                     }
                 }
             }
@@ -380,7 +399,6 @@ public class MenuInicial extends AppCompatActivity
                         rb1.setChecked(false);
                         txtProf.setVisibility(View.GONE);
                         spnP.setVisibility(View.GONE);
-
                         AlertDialog.Builder dlg = new AlertDialog.Builder(MenuInicial.this);
                         dlg.setMessage("Você deve selecionar uma data e um serviço");
                         dlg.setNeutralButton("OK", null);
@@ -392,6 +410,7 @@ public class MenuInicial extends AppCompatActivity
                         spnP.setVisibility(View.VISIBLE);
                         spnP.setEnabled(true);
                         getProfissionais(COD_EMPRESA, codServicoSelecionado, dataRecebida);
+                        spnH.setSelection(0);
 
                     }
                 }
@@ -416,6 +435,7 @@ public class MenuInicial extends AppCompatActivity
 
                         txtProf.setVisibility(View.GONE);
                         spnP.setVisibility(View.GONE);
+                        spnH.setSelection(0);
                         getHorarioSemProfissional();
 
                     }
@@ -468,7 +488,7 @@ public class MenuInicial extends AppCompatActivity
             Intent intent = new Intent(this, ResultadoAgendamento.class);
             startActivity(intent);
         } else if (id == R.id.nav_agendar) {
-            Intent intent = new Intent(this, SelecaoUnidade.class);
+            Intent intent = new Intent(this, MenuInicial.class);
             startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
             Intent intent = new Intent(this, Localizacao.class);
@@ -801,8 +821,9 @@ public class MenuInicial extends AppCompatActivity
 
     public void onclicAgendar(View v) {
 
-        if(servicoSelecionado.equals("Selecione") && servicoSelecionado.equals("")
-                || dataRecebida.equals("a") || horarioSelecionado.equals("Selecione") && horarioSelecionado.equals("")){
+        if(servicoSelecionado.equals("Selecione") || servicoSelecionado.equals("") || servicoSelecionado == null
+                || dataRecebida.equals("a") || horaAgendamento.equals("Selecione") || horaAgendamento.equals("")
+                || horaAgendamento == null){
 
             AlertDialog.Builder dlg = new AlertDialog.Builder(this);
             dlg.setMessage("Antes de agendar você deve selecionar um serviço, selecionar a data, selecionar uma opção para o profissional (Sim ou não) e selecionar um horario");
@@ -869,6 +890,12 @@ public class MenuInicial extends AppCompatActivity
 
         dataRecebida = data.getData();
         txv_data.setText("Data selecionada: " + dataRecebida);
+        if(auxLstProfissionaisHorario != null && auxLstProfissionaisHorario.size() > 0) {
+            horaAgendamento = auxLstProfissionaisHorario.get(0);
+        }else{
+            horaAgendamento = "";
+        }
+        spnH.setSelection(0);
 
     }
 }
