@@ -14,22 +14,22 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="55dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:background="@drawable/placeholder"/>
+        android:background="@drawable/logotipo"
+        android:layout_height="55dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="José Carlos"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="Nome"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:id="@+id/txv_header_nome" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txv_header_email"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="jose.carlos@gmail.com" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

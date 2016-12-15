@@ -9,8 +9,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.text.Html;
-import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -36,7 +34,6 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import br.com.brasil.spa.Entidades.Filial;
@@ -62,7 +59,7 @@ public class MenuInicial extends AppCompatActivity
     private List<Servicos> lstServicos;
     private List<Profissionais> lstProfissionais;
     private List<ProfissionaisHorario> lstProfissionaisHorario;
-    private List<ResultadoAgendamento> lstResultadoAgendamento;
+    private List<Historico> lstResultadoAgendamento;
     private List<Filial> auxLstUnidades;
     private List<String> lstSpnUnidade;
     private List<String> auxLstServicos;
@@ -83,6 +80,7 @@ public class MenuInicial extends AppCompatActivity
     private Spinner spnH;
     private TextView txv_data;
     private TextView txt_calendario;
+
 
     //seleções spinners
     private String filialSelecionada;
@@ -106,6 +104,11 @@ public class MenuInicial extends AppCompatActivity
     //Dados Login
     private Integer cod_cliente;
     private String nome;
+
+    //header
+    private NavigationView navigationView;
+    private TextView txv_header_nome;
+    private TextView txv_header_email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,8 +147,12 @@ public class MenuInicial extends AppCompatActivity
         spnP = (Spinner) findViewById(R.id.spn_profissional);
         spnH = (Spinner) findViewById(R.id.spn_horario);
 
+
+
         txv_data = (TextView) findViewById(R.id.txv_data);
         txv_data.setText("");
+
+
 
         txt_calendario = (TextView) findViewById(R.id.txtCalendario);
         txt_calendario.setOnClickListener(new View.OnClickListener() {
@@ -173,8 +180,16 @@ public class MenuInicial extends AppCompatActivity
 
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        //header navigation view
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View v = navigationView.getHeaderView(0);
+
+        txv_header_nome = (TextView) v.findViewById(R.id.txv_header_nome);
+        txv_header_email = (TextView) v.findViewById(R.id.txv_header_email);
+        txv_header_nome.setText(Sessao.getNomeCliente());
+        txv_header_email.setText(Sessao.getEMAIL());
 
         //clicks nos spinners
         /*spnU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -485,7 +500,7 @@ public class MenuInicial extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            Intent intent = new Intent(this, ResultadoAgendamento.class);
+            Intent intent = new Intent(this, Historico.class);
             startActivity(intent);
         } else if (id == R.id.nav_agendar) {
             Intent intent = new Intent(this, MenuInicial.class);
@@ -567,7 +582,7 @@ public class MenuInicial extends AppCompatActivity
                         public void run() {
                             preencheSpinnerUnidade();
                             COD_FILIAL = auxLstUnidades.get(posicao).getCOD_FILIAL();
-                            spnU.setSelection(posicao);
+                            spnU.setSelection(posicao+1);
                             getServicos(COD_FILIAL);
                         }
                     });
@@ -873,7 +888,7 @@ public class MenuInicial extends AppCompatActivity
 
             Toast.makeText(this, resultadoAgendamento, Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(this, ResultadoAgendamento.class);
+            Intent intent = new Intent(this, Historico.class);
             startActivity(intent);
         }
         else {

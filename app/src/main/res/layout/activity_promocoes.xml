@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:text="Aproveite nossa semana de tratamento estético com 10 opções de procedimentos, ao custo de R$ 1.000,00 o pacote.\n\nPromoção válida até 31/10/2016"/>
+            android:text="Carregando..."/>
 
     </RelativeLayout>
 

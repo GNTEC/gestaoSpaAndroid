@@ -3,15 +3,6 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="fbb3885c40e431cd2b0dc69c0cab2bf6d5da7b43">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-games-9.8.0_770a85cb6a545cb7b4ceccca274ef0d95c2b9be9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -21,30 +12,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\libs\internal_impl-24.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_fffb6f40b58608ff03101306b19ec9b6118bfbe5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="61cd5173c50b44482c6252a70fb351ed7a38643b">
+        sha1="8f2a5006b9098f81eb028d7ca2190a4541bccfbb">
         <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8fdae4f578647e7cc795b0caf3be591baa176fea\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e3234cd25e23069abd48ecd2117bc0e8011bf45a">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appindexing-9.8.0_2a9003f2585bd5b0b9c2c568a668f1729a87ec32\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -54,15 +27,6 @@
         revision="24.0.3"
         sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
         <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\eventbus-3.0.0_a0d6794023b83b2ac33d93d6b7e4a5dd9dec0a00\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_6c15a424c4aff078b6e6f4791e7377d06d655cb7\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -93,39 +57,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="20a3c4e355150c15c13dd58045d43ad0c717d916">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-safetynet-9.8.0_b9bde13bd12959049f81e8e043cca51bcc598145\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\9.8.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="a30aea7df545072ad3c06f56b2efc13e67222140">
         <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-9.8.0_cf9e51a2a0b24fc6bb7816c52085303c60f9dcb1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_b9a34cd00e726a493ed71232cca75f611198aef7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-mediarouter-v7-24.0.0_cfb3c430734cbfe6ecfbfbb4f54f84dc856f3d87\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -156,51 +93,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.8.0_a0d065f9d301302f0bc0fd20b94741ca14d813db\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7fd91ec2730fdaa82906aad32a3f3d3e574bae56">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-9.8.0_afe2c44baf7996340e696a6c3da5599a82f93bb9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-9.8.0_a61e1f14e72ba0d74fb10bc5221dfb95e07eb1ae\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="a972970c8beddb69c198f61f3fc55f0606a7dfe3">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-9.8.0_affe859edaa133401acd46a9c5d08677cd9da207\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5ffe8867f51cfc726e9fb21db1e5b6962ebf25a0">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-messaging-9.8.0_b278950df15ff8506330aa9b05ed6ce33f2aab81\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -210,48 +102,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="775bc20553440da097ccba9e982f23b08a1c63de">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_3580093750bc503b9d1d054ab9e60d1c7ce0ac2a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\h3ll\.gradle\caches\modules-2\files-2.1\cz.msebera.android\httpclient\4.3.6\526a9f794eab830eae4f23a62c572878b3f491ab\httpclient-4.3.6.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="526a9f794eab830eae4f23a62c572878b3f491ab">
         <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\httpclient-4.3.6_8ed892392bc8e6c6cbe960838353ad2d58007108\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="190a642ba16d1421296a4d794606279b80039c59">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-9.8.0_b4d263ed61f5a98f6f6dc12c2c4c5da7d1936647\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="85299bf1924dde0200109a58033c5ef84ecb6991">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-iid-9.8.0_90e87fb50295e3bbcb7c9d5670b9f9f0b88a9939\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_80d8fdd700333b91121ee0ae85f80c8d8650697d\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -270,33 +126,6 @@
         revision="24.0.3"
         sha1="679251204de40ace98776a6f4e3a649c27e3d89f">
         <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-places-9.8.0_ecf55f21ac81c4fa70f3812e2ee3d0da07614f5e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="a1ed98e01bd58976d80c062fd0ea2968a1ff68a1">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-9.8.0_ae279309434d82711ab16bf2f24764d9520223f5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="2d3035050a075484cbf2e33f1ce1f779bae4d451">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-panorama-9.8.0_0d3709c8ba1a63e4a625015ec1a15ba318037263\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_869c19645efb6467a676fbd74bb43d42f995f9c5\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -354,15 +183,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-module\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="3f8f779a22cbb4c4d0759467a4f1011bb5252970">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-module-9.8.0_88b0f698b4c5c1dbd6daa9ab037a8a4defe25026\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -378,51 +198,6 @@
         revision="24.0.3"
         sha1="d5c731fc64c03dfe04d51134955b483551c35849">
         <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_95d96a127eeaa164e2ced2abf32991132e71189a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="a7a04d6b7c01e569a285fa627cf64f5b05295906">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-fitness-9.8.0_af3dd3da645065064c1e486cf318330448ff6c4e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-awareness\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="a2537b11ae24b42172d34e2a613fc0b903c56158">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-awareness-9.8.0_6e890a3783e5200c355844a23a7d12e04a64aa8f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_2d870efe0513cdaaa4f3d3bcea398bd088e931f5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="74ac7cbcf0de4a88e59612dc3a9e3f9e71acb4ca">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-9.8.0_ef0b84242be67d34570da1dd200ad6c5ab8d1f2b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_3291b04f97333d1bfd4e96af15cf11501963bbe0\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -480,24 +255,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="ee5304fd374e0b4ebf6b42d4037fbfb2c5336511">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-clearcut-9.8.0_3f575edcd4d42ca9d40a6a1c3a062b882af1e5bd\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="9dae58326f6f6a515022468cce56dd04ec3b9fdb">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gcm-9.8.0_58e1f46506cfadc1211a3cb99f69e0742c5fdf9b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.8.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -522,15 +279,6 @@
         revision="24.0.3"
         sha1="055eed08c9cff50cac0db69c74c4d9ff7aef3d84">
         <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-framework-9.8.0_b8f934d123854a02a83779e918c0a097904b62c7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\palette-v7\24.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-palette-v7-24.0.0_bf974683aa47c1462be2c2f4213f56b32bb95209\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -597,33 +345,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_38cfd088961d4151e44df1ada019c70ab204107d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_6acf149043c3d9921eb4a593aedaedb5bddf9640\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_70114e7c1704f7756f0dfaa29b92c58e6e20020d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\9.8.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -657,6 +378,285 @@
         revision="24.0.3"
         sha1="16afe57c1d7f8165d107c7806ce7b0c71de87159">
         <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-9.8.0_b4e7c67a547457a849f36c67b8da6502e0d89cb8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbb3885c40e431cd2b0dc69c0cab2bf6d5da7b43">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-games-9.8.0_770a85cb6a545cb7b4ceccca274ef0d95c2b9be9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_fffb6f40b58608ff03101306b19ec9b6118bfbe5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e3234cd25e23069abd48ecd2117bc0e8011bf45a">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appindexing-9.8.0_2a9003f2585bd5b0b9c2c568a668f1729a87ec32\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_6c15a424c4aff078b6e6f4791e7377d06d655cb7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="20a3c4e355150c15c13dd58045d43ad0c717d916">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-safetynet-9.8.0_b9bde13bd12959049f81e8e043cca51bcc598145\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_b9a34cd00e726a493ed71232cca75f611198aef7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-mediarouter-v7-24.0.0_cfb3c430734cbfe6ecfbfbb4f54f84dc856f3d87\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.8.0_a0d065f9d301302f0bc0fd20b94741ca14d813db\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7fd91ec2730fdaa82906aad32a3f3d3e574bae56">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-9.8.0_afe2c44baf7996340e696a6c3da5599a82f93bb9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-9.8.0_a61e1f14e72ba0d74fb10bc5221dfb95e07eb1ae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a972970c8beddb69c198f61f3fc55f0606a7dfe3">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-9.8.0_affe859edaa133401acd46a9c5d08677cd9da207\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5ffe8867f51cfc726e9fb21db1e5b6962ebf25a0">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-messaging-9.8.0_b278950df15ff8506330aa9b05ed6ce33f2aab81\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="58c82375d59f7c380152f7cb948d51778202c0f5">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_3580093750bc503b9d1d054ab9e60d1c7ce0ac2a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="190a642ba16d1421296a4d794606279b80039c59">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-9.8.0_b4d263ed61f5a98f6f6dc12c2c4c5da7d1936647\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="85299bf1924dde0200109a58033c5ef84ecb6991">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-iid-9.8.0_90e87fb50295e3bbcb7c9d5670b9f9f0b88a9939\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_80d8fdd700333b91121ee0ae85f80c8d8650697d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a1ed98e01bd58976d80c062fd0ea2968a1ff68a1">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-9.8.0_ae279309434d82711ab16bf2f24764d9520223f5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="2d3035050a075484cbf2e33f1ce1f779bae4d451">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-panorama-9.8.0_0d3709c8ba1a63e4a625015ec1a15ba318037263\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_869c19645efb6467a676fbd74bb43d42f995f9c5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-module\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3f8f779a22cbb4c4d0759467a4f1011bb5252970">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-module-9.8.0_88b0f698b4c5c1dbd6daa9ab037a8a4defe25026\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a7a04d6b7c01e569a285fa627cf64f5b05295906">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-fitness-9.8.0_af3dd3da645065064c1e486cf318330448ff6c4e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-awareness\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a2537b11ae24b42172d34e2a613fc0b903c56158">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-awareness-9.8.0_6e890a3783e5200c355844a23a7d12e04a64aa8f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_2d870efe0513cdaaa4f3d3bcea398bd088e931f5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="74ac7cbcf0de4a88e59612dc3a9e3f9e71acb4ca">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-9.8.0_ef0b84242be67d34570da1dd200ad6c5ab8d1f2b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_3291b04f97333d1bfd4e96af15cf11501963bbe0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ee5304fd374e0b4ebf6b42d4037fbfb2c5336511">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-clearcut-9.8.0_3f575edcd4d42ca9d40a6a1c3a062b882af1e5bd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9dae58326f6f6a515022468cce56dd04ec3b9fdb">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gcm-9.8.0_58e1f46506cfadc1211a3cb99f69e0742c5fdf9b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\palette-v7\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-palette-v7-24.0.0_bf974683aa47c1462be2c2f4213f56b32bb95209\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_38cfd088961d4151e44df1ada019c70ab204107d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_6acf149043c3d9921eb4a593aedaedb5bddf9640\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\h3ll\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_70114e7c1704f7756f0dfaa29b92c58e6e20020d\classes.dex" />
     </item>
     <item
         is-multidex="true"

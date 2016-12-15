@@ -1,30 +1,24 @@
 package br.com.brasil.spa.Adapters;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.brasil.spa.Entidades.Agendamento;
 import br.com.brasil.spa.R;
-import br.com.brasil.spa.ResultadoAgendamento;
 import br.com.brasil.spa.Utils.Sessao;
 import br.com.brasil.spa.WebService;
 

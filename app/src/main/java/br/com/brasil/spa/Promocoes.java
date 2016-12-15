@@ -1,7 +1,10 @@
 package br.com.brasil.spa;
 
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -46,6 +49,9 @@ public class Promocoes extends AppCompatActivity {
 
         getSupportActionBar().setTitle("PROMOÇÕES");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Drawable upArrow = ContextCompat.getDrawable(this, R.drawable.abc_ic_ab_back_material);
+        upArrow.setColorFilter(ContextCompat.getColor(this, R.color.white), PorterDuff.Mode.SRC_ATOP);
+        getSupportActionBar().setHomeAsUpIndicator(upArrow);
 
         txv_promo_2 = (TextView) findViewById(R.id.txv_promo_2);
         filial = Sessao.getCodFilial();

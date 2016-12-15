@@ -16,6 +16,8 @@ public class Sessao {
 
     public static Integer POSICAO;
 
+    public static String EMAIL;
+
     public static Integer getCodFilial() {
         return COD_FILIAL;
     }
@@ -54,5 +56,13 @@ public class Sessao {
 
     public static void setPOSICAO(Integer POSICAO) {
         Sessao.POSICAO = POSICAO;
+    }
+
+    public static String getEMAIL() {
+        return EMAIL;
+    }
+
+    public static void setEMAIL(String EMAIL) {
+        Sessao.EMAIL = EMAIL;
     }
 }

@@ -18,7 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_weight="1"
+        android:layout_weight="20"
         >
 
         <RelativeLayout
@@ -189,7 +189,7 @@
                 android:paddingRight="16dp" />
 
             <TextView
-                android:text="Data"
+                android:text="Escolha uma data"
                 android:layout_marginTop="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -207,7 +207,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
-        android:layout_weight="1"
+        android:layout_weight="0"
         >
 
         <Button
@@ -222,7 +222,7 @@
             android:text="Agendar"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_weight="0"
+            android:layout_weight="-1"
             />
 
         <ImageView

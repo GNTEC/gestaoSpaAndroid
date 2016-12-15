@@ -206,6 +206,7 @@ public class Login extends AppCompatActivity implements Runnable{
         }
 
         if(MSG_RETORNO.equals("OK")){
+            Sessao.setEMAIL(login_email.getText().toString());
             Intent intent = new Intent(Login.this, SelecaoUnidade.class);
             startActivity(intent);
         }
