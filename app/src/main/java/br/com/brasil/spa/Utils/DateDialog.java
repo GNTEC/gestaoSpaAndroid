@@ -10,6 +10,8 @@ import android.widget.DatePicker;
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Created by Ivan on 21/11/2016.
@@ -31,6 +33,7 @@ public class DateDialog extends android.support.v4.app.DialogFragment implements
         int diaR = calendar.get(Calendar.DAY_OF_MONTH);
 
         DatePickerDialog dp = new DatePickerDialog(getContext(), this, anoR, mesR, diaR);
+        dp.getDatePicker().setMinDate(calendar.getTimeInMillis());
 
         return dp;
 
