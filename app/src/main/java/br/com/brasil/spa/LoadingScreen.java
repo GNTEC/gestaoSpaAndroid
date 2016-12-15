@@ -21,10 +21,10 @@ public class LoadingScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_loading);
+        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_loading);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle("");*/
         loading();
     }
 
