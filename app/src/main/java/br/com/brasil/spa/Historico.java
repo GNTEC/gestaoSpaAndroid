@@ -1,5 +1,6 @@
 package br.com.brasil.spa;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -18,6 +19,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -29,6 +32,7 @@ import br.com.brasil.spa.Entidades.Agendamento;
 import br.com.brasil.spa.Entidades.Cliente;
 import br.com.brasil.spa.Entidades.Profissionais;
 import br.com.brasil.spa.Entidades.Servicos;
+import br.com.brasil.spa.Utils.Eventos;
 import br.com.brasil.spa.Utils.Sessao;
 
 /**
@@ -44,11 +48,14 @@ public class Historico extends AppCompatActivity {
     private Toolbar toolbar;
     private DrawerLayout drawer;
     private ActionBarDrawerToggle toggle;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historico_agendamento);
+
+        EventBus.getDefault().register(this);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_list);
 
@@ -65,23 +72,11 @@ public class Historico extends AppCompatActivity {
 
         getAgendamento();
 
-        /*mRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+    }
 
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-            }
-
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-
-                LinearLayoutManager llm = (LinearLayoutManager) mRecyclerView.getLayoutManager();
-                AgendamentoAdapter agendamentoAdapter = (AgendamentoAdapter) mRecyclerView.getAdapter();
-
-            }
-        });*/
-
+    @Subscribe
+    public void onEvent(Eventos.atualizaHolder atualizar){
+        getAgendamento();
     }
 
     public void onClickNovoAgendamento(View v){
@@ -89,17 +84,7 @@ public class Historico extends AppCompatActivity {
         Intent intent = new Intent(this, MenuInicial.class);
         startActivity(intent);
 
-        //Toast.makeText(this, "Realizar outro agendameto", Toast.LENGTH_SHORT).show();
     }
-
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId()==android.R.id.home){
-            finish();
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
-
 
     public void getAgendamento() {
 
@@ -167,15 +152,19 @@ public class Historico extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+
                                 mRecyclerView.setHasFixedSize(true);
                                 LinearLayoutManager llm = new LinearLayoutManager(Historico.this);
                                 llm.setOrientation(LinearLayoutManager.VERTICAL);
                                 mRecyclerView.setLayoutManager(llm);
                                 AgendamentoAdapter agendamentoAdapter = new AgendamentoAdapter(Historico.this, lstAgendamento);
+
                                 //atualiza o adapter
                                 agendamentoAdapter.notifyDataSetChanged();
+
                                 //seta o adapter
                                 mRecyclerView.setAdapter(agendamentoAdapter);
+
                             }
                         });
                     }

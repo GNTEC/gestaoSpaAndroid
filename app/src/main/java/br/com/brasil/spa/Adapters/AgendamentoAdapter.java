@@ -14,11 +14,16 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.brasil.spa.Entidades.Agendamento;
+import br.com.brasil.spa.Entidades.HorasProfissional;
+import br.com.brasil.spa.Historico;
 import br.com.brasil.spa.R;
+import br.com.brasil.spa.Utils.Eventos;
 import br.com.brasil.spa.Utils.Sessao;
 import br.com.brasil.spa.WebService;
 
@@ -41,6 +46,7 @@ public class AgendamentoAdapter extends RecyclerView.Adapter<AgendamentoAdapter.
     private Integer status;
     private String resultadoStatus;
     private Handler handler;
+    private String res;
 
     public AgendamentoAdapter(Context context, List<Agendamento> list){
         this.context = context;
@@ -95,6 +101,8 @@ public class AgendamentoAdapter extends RecyclerView.Adapter<AgendamentoAdapter.
 
                 COD_FILIAL = Sessao.getCodFilial();
                 COD_AGENDAMENTO = mList.get(position).getCOD_AGENDAMENTO();
+
+                EventBus.getDefault().post(new Eventos.atualizaHolder());
 
                 if(selecaoSpinner.equals("Selecione")){
                     AlertDialog.Builder dlg = new AlertDialog.Builder(context);
@@ -173,6 +181,7 @@ public class AgendamentoAdapter extends RecyclerView.Adapter<AgendamentoAdapter.
                     objWs.setSOAP_ADDRESS(SOAP_ADDRESS);
 
                     resultadoStatus = objWs.setAgengamentoStatus(COD_EMPRESA, COD_FILIAL, COD_AGENDAMENTO, status);
+                    res = resultadoStatus.replaceAll("\"", "");
                     Log.e("Resultado: ", resultadoStatus);
 
                     handler.post(new Runnable() {
@@ -180,7 +189,7 @@ public class AgendamentoAdapter extends RecyclerView.Adapter<AgendamentoAdapter.
                         public void run() {
 
                             AlertDialog.Builder dlg = new AlertDialog.Builder(context);
-                            dlg.setMessage(resultadoStatus);
+                            dlg.setMessage(res);
                             dlg.setNeutralButton("OK", null);
                             dlg.show();
 
