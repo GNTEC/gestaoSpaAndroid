@@ -79,6 +79,12 @@ public class Historico extends AppCompatActivity {
         getAgendamento();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();  // Always call the superclass method first
+        getAgendamento();
+    }
+
     public void onClickNovoAgendamento(View v){
 
         Intent intent = new Intent(this, MenuInicial.class);

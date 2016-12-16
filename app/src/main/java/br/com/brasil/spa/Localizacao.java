@@ -72,7 +72,7 @@ public class Localizacao extends AppCompatActivity implements OnMapReadyCallback
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_localizacao);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle("LOCALIZAÇÃO");
+        getSupportActionBar().setTitle("Localização");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Drawable upArrow = ContextCompat.getDrawable(this, R.drawable.abc_ic_ab_back_material);
         upArrow.setColorFilter(ContextCompat.getColor(this, R.color.white), PorterDuff.Mode.SRC_ATOP);

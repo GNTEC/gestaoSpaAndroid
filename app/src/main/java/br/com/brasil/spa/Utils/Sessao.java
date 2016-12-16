@@ -18,6 +18,8 @@ public class Sessao {
 
     public static String EMAIL;
 
+    public static Integer COD_AGENDAMENTO;
+
     public static Integer getCodFilial() {
         return COD_FILIAL;
     }
@@ -64,5 +66,13 @@ public class Sessao {
 
     public static void setEMAIL(String EMAIL) {
         Sessao.EMAIL = EMAIL;
+    }
+
+    public static Integer getCodAgendamento() {
+        return COD_AGENDAMENTO;
+    }
+
+    public static void setCodAgendamento(Integer codAgendamento) {
+        COD_AGENDAMENTO = codAgendamento;
     }
 }

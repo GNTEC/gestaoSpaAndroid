@@ -87,6 +87,7 @@
 
         <TextView
             android:text="Status"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txv_data"

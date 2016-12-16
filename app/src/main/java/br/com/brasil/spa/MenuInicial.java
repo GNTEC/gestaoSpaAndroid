@@ -97,6 +97,7 @@ public class MenuInicial extends AppCompatActivity
     private String horaAgendamento;
     private String dateString;
     private String timeString;
+    private String result;
 
     //sem profissional
     private boolean semProfissional = false;
@@ -104,6 +105,7 @@ public class MenuInicial extends AppCompatActivity
     //Dados Login
     private Integer cod_cliente;
     private String nome;
+    private Integer cod_filial;
 
     //header
     private NavigationView navigationView;
@@ -121,6 +123,8 @@ public class MenuInicial extends AppCompatActivity
 
         }
         setSupportActionBar(toolbar);
+
+        cod_filial = Sessao.getCodFilial();
 
         final Drawable upArrow = getResources().getDrawable(R.drawable.mobile_nav);
         upArrow.setColorFilter(Color.parseColor("#d0d0d0"), PorterDuff.Mode.SRC_ATOP);
@@ -424,7 +428,7 @@ public class MenuInicial extends AppCompatActivity
                         txtProf.setVisibility(View.VISIBLE);
                         spnP.setVisibility(View.VISIBLE);
                         spnP.setEnabled(true);
-                        getProfissionais(COD_EMPRESA, codServicoSelecionado, dataRecebida);
+                        getProfissionais(COD_EMPRESA, cod_filial ,codServicoSelecionado, dateString);
                         spnH.setSelection(0);
 
                     }
@@ -651,7 +655,7 @@ public class MenuInicial extends AppCompatActivity
         }.start();
     }
 
-    public void getProfissionais(final Integer COD_EMPRESA, final Integer COD_SERVICO, final String DATA) {
+    public void getProfissionais(final Integer COD_EMPRESA, final Integer COD_FILIAL,final Integer COD_SERVICO, final String DATA) {
         new Thread() {
 
             @Override
@@ -673,7 +677,7 @@ public class MenuInicial extends AppCompatActivity
                     objWs.setWSDL_TARGET_NAMESPACE(WDSL_TARGET_NAMESPACE);
                     objWs.setSOAP_ADDRESS(SOAP_ADDRESS);
 
-                    String resultadoFuncProfissionais = objWs.getProfissionais(COD_EMPRESA, COD_SERVICO, DATA);
+                    String resultadoFuncProfissionais = objWs.getProfissionais(COD_EMPRESA, cod_filial,COD_SERVICO, DATA);
 
                     final JSONArray jsonArray = new JSONArray(resultadoFuncProfissionais);
 
@@ -865,7 +869,11 @@ public class MenuInicial extends AppCompatActivity
                         resultadoAgendamento = objWs.setAgendamento(COD_EMPRESA, COD_FILIAL, 0, cod_cliente,
                                 codServicoSelecionado, codProfissionalSelecionado, dateString, timeString);
 
-                        resultadoAgendamento = resultadoAgendamento.replace("\"", "");
+                        JSONObject obj = new JSONObject(resultadoAgendamento);
+                        Sessao.setCodAgendamento(obj.getInt("COD_AGENDAMENTO"));
+                        result = obj.getString("MSG_RETORNO");
+
+                        //resultadoAgendamento = resultadoAgendamento.replace("\"", "");
 
                         runOnUiThread(new Runnable() {
                             @Override
@@ -884,11 +892,11 @@ public class MenuInicial extends AppCompatActivity
 
     public  void gotoResultadoAgendamento(){
 
-        if (resultadoAgendamento.equals("Agendamento realizado com sucesso.")){
+        if (result.equals("Agendamento realizado com sucesso.")){
 
-            Toast.makeText(this, resultadoAgendamento, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(this, Historico.class);
+            Intent intent = new Intent(this, ResultadoAgendamento.class);
             startActivity(intent);
         }
         else {
@@ -898,12 +906,12 @@ public class MenuInicial extends AppCompatActivity
     }
 
     //Eventos do event bus
-
     //Recebe data do datePicker
     @Subscribe
     public void onEventRecebeData(Eventos.RecebeData data) {
 
         dataRecebida = data.getData();
+        formatarDataTimePicker();
         txv_data.setText("Data selecionada: " + dataRecebida);
         if(auxLstProfissionaisHorario != null && auxLstProfissionaisHorario.size() > 0) {
             horaAgendamento = auxLstProfissionaisHorario.get(0);

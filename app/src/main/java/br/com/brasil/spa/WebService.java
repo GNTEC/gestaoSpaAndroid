@@ -184,7 +184,7 @@ public class WebService {
         return response.toString();
     }
 
-    public String getProfissionais(Integer cod_empresa, Integer cod_servico, String data_agenda){
+    public String getProfissionais(Integer cod_empresa, Integer cod_filial, Integer cod_servico, String data_agenda){
 
         SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE, OPERATION_NAME);
 
@@ -193,6 +193,12 @@ public class WebService {
         COD_EMPRESA.setValue(cod_empresa);
         COD_EMPRESA.type = PropertyInfo.INTEGER_CLASS;
         request.addProperty(COD_EMPRESA);
+
+        PropertyInfo COD_FILIAL = new PropertyInfo();
+        COD_FILIAL.setName("COD_FILIAL");
+        COD_FILIAL.setValue(cod_filial);
+        COD_FILIAL.type = PropertyInfo.INTEGER_CLASS;
+        request.addProperty(COD_FILIAL);
 
         PropertyInfo COD_SERVICO = new PropertyInfo();
         COD_SERVICO.setName("COD_SERVICO");
@@ -523,4 +529,48 @@ public class WebService {
 
         return response.toString();
     }
+
+    public String getAgendamento(Integer cod_empresa, Integer cod_filial, Integer cod_agendamento){
+
+        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE, OPERATION_NAME);
+
+        PropertyInfo COD_EMPRESA = new PropertyInfo();
+        COD_EMPRESA.setName("COD_EMPRESA");
+        COD_EMPRESA.setValue(cod_empresa);
+        COD_EMPRESA.type = PropertyInfo.INTEGER_CLASS;
+        request.addProperty(COD_EMPRESA);
+
+        PropertyInfo COD_FILIAL = new PropertyInfo();
+        COD_FILIAL.setName("COD_FILIAL");
+        COD_FILIAL.setValue(cod_filial);
+        COD_FILIAL.type = PropertyInfo.INTEGER_CLASS;
+        request.addProperty(COD_FILIAL);
+
+        PropertyInfo COD_AGENDAMENTO = new PropertyInfo();
+        COD_AGENDAMENTO.setName("COD_AGENDAMENTO");
+        COD_AGENDAMENTO.setValue(cod_agendamento);
+        COD_AGENDAMENTO.type = PropertyInfo.INTEGER_CLASS;
+        request.addProperty(COD_AGENDAMENTO);
+
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+        envelope.dotNet = true;
+
+        envelope.setOutputSoapObject(request);
+
+        HttpTransportSE transportSE = new HttpTransportSE(SOAP_ADDRESS);
+        Object response = null;
+
+        try{
+
+            transportSE.call(SOAP_ACTION, envelope);
+            response = envelope.getResponse();
+
+        }catch (Exception ex){
+            Log.e("WebService: " , ex.toString());
+            response = ex.toString();
+        }
+
+        return response.toString();
+    }
+
 }

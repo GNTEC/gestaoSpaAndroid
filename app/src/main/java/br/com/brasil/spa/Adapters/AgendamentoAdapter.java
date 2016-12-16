@@ -193,7 +193,6 @@ public class AgendamentoAdapter extends RecyclerView.Adapter<AgendamentoAdapter.
                             dlg.setNeutralButton("OK", null);
                             dlg.show();
 
-                            //TODO- Atualizar a activity (fechar e abrir de novo) testar as rotinas
                         }
                     });
 
