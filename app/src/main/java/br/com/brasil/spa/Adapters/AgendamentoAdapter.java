@@ -2,6 +2,7 @@ package br.com.brasil.spa.Adapters;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -19,10 +20,12 @@ import org.greenrobot.eventbus.EventBus;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.brasil.spa.AlterarAgendamento;
 import br.com.brasil.spa.Entidades.Agendamento;
 import br.com.brasil.spa.Entidades.HorasProfissional;
 import br.com.brasil.spa.Historico;
 import br.com.brasil.spa.R;
+import br.com.brasil.spa.Utils.AgendamentoDados;
 import br.com.brasil.spa.Utils.Eventos;
 import br.com.brasil.spa.Utils.Sessao;
 import br.com.brasil.spa.WebService;
@@ -119,7 +122,17 @@ public class AgendamentoAdapter extends RecyclerView.Adapter<AgendamentoAdapter.
 
                 }else if(selecaoSpinner.equals("Alterar")){
                     status = 2;
-                    setStatusAgendamento();
+                    //Seta as contantes de agendamento
+                    AgendamentoDados.setCodFilial(COD_FILIAL);
+                    AgendamentoDados.setCodAgendamento(COD_AGENDAMENTO);
+                    AgendamentoDados.setCodCliente(mList.get(position).getCLIENTE().getCOD_CLIENTE());
+                    AgendamentoDados.setCodServico(mList.get(position).getSERVICOS().getCodServico());
+                    AgendamentoDados.setCodProfissional(mList.get(position).getPROFISSIONAIS().getCOD_PROFISSIONAL());
+                    AgendamentoDados.setDataSelecionada(mList.get(position).getDATA());
+
+                    Intent i = new Intent(context, AlterarAgendamento.class);
+                    context.startActivity(i);
+
                 }
             }
         });

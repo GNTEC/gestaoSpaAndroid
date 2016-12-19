@@ -599,6 +599,7 @@ public class MenuInicial extends AppCompatActivity
     }
 
     public void getServicos(final Integer filial) {
+
         new Thread() {
             @Override
             public void run() {
