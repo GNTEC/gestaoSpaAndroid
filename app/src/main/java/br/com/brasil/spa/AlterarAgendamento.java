@@ -70,7 +70,7 @@ public class AlterarAgendamento extends AppCompatActivity implements NavigationV
     private Button btn_alterar_agendar;
 
     //Dados Agendamento
-    private Integer COD_EMPRESA = 58;
+    private Integer COD_EMPRESA;
     private Integer COD_FILIAL;
     private Integer COD_AGENDAMENTO;
     private Integer COD_CLIENTE;
@@ -161,6 +161,7 @@ public class AlterarAgendamento extends AppCompatActivity implements NavigationV
         txv_alterar_profissional = (TextView) findViewById(R.id.txv_alterar_profissional);
 
         //Recebe os dados do Agendamento
+        COD_EMPRESA = Sessao.COD_EMPRESA;
         COD_FILIAL = AgendamentoDados.getCodFilial();
         COD_AGENDAMENTO = AgendamentoDados.getCodAgendamento();
         COD_CLIENTE = AgendamentoDados.getCodCliente();
@@ -866,18 +867,23 @@ public class AlterarAgendamento extends AppCompatActivity implements NavigationV
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
+            finish();
             Intent intent = new Intent(this, Historico.class);
             startActivity(intent);
         } else if (id == R.id.nav_agendar) {
+            finish();
             Intent intent = new Intent(this, MenuInicial.class);
             startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
+            finish();
             Intent intent = new Intent(this, Localizacao.class);
             startActivity(intent);
         } else if (id == R.id.nav_manage) {
+            finish();
             Intent intent = new Intent(this, Promocoes.class);
             startActivity(intent);
         } else if (id == R.id.nav_unidade) {
+            finish();
             Intent intent = new Intent(this, SelecaoUnidade.class);
             startActivity(intent);
         } else if (id == R.id.nav_la) {

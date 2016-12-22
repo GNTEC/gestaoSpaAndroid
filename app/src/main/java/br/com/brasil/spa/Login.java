@@ -28,10 +28,6 @@ import java.util.List;
 import br.com.brasil.spa.Utils.Eventos;
 import br.com.brasil.spa.Utils.Sessao;
 
-/**
- * Created by abadari on 27/10/2016.
- */
-
 public class Login extends AppCompatActivity implements Runnable{
 
     private EditText login_email;
@@ -41,7 +37,7 @@ public class Login extends AppCompatActivity implements Runnable{
     private String senha;
     private Handler handler = new Handler();
     private ProgressDialog progressDialog;
-    private static Integer COD_EMPRESA = 58;
+    private static Integer COD_EMPRESA;
     private List<String> lstParamentros;
     private String resultado;
 
@@ -72,6 +68,8 @@ public class Login extends AppCompatActivity implements Runnable{
 
         // instancia widgets
         cast();
+
+        COD_EMPRESA = Sessao.COD_EMPRESA;
 
         //permissoes marshmallow
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -104,20 +102,10 @@ public class Login extends AppCompatActivity implements Runnable{
                 Thread thread = new Thread(Login.this);
                 thread.start();
 
-                /*Intent intent = new Intent(Login.this, MenuInicial.class);
-                startActivity(intent);*/
-
             }
         });
     }
 
-    //está no xml...
-  /*  public void login(View v){
-        Intent intent = new Intent(this, MenuInicial.class);
-        startActivity(intent);
-    }*/
-
-    //commit
 
     public void cast(){
 
@@ -133,12 +121,7 @@ public class Login extends AppCompatActivity implements Runnable{
         String SOAP_ACTION = "http://www.gestaospa.com.br/PROD/WebSrv/LOGIN_3";
         String OPERATION_NAME = "LOGIN_3";
         String WDSL_TARGET_NAMESPACE = "http://www.gestaospa.com.br/PROD/WebSrv/";
-        //String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao_2.asmx";
         String SOAP_ADDRESS = "http://www.gestaospa.com.br/PROD/WebSrv/WebServiceGestao.asmx";
-
-        /*String usuario= "claudio@dgm.com.br";
-        String senha = "aaa@123";*/
-
         String usuario = login_email.getText().toString().trim();
         String senha = login_senha.getText().toString();
 
@@ -157,22 +140,14 @@ public class Login extends AppCompatActivity implements Runnable{
             NOME = obj.getString("NOME");
             MSG_RETORNO = obj.getString("MSG_RETORNO");
 
-            //Passa os dados para o eventbus para pegar em outro lugar
-            /*EventBus.getDefault().post(new Eventos.RecebeDadosLoginCodCliente(COD_CLIENTE));
-            EventBus.getDefault().post(new Eventos.RecebeDadosLoginNomeCliente(NOME));*/
-
             //Passa os dados do cliente para realizar agendamento
             Sessao.setCodCliente(COD_CLIENTE);
             Sessao.setNomeCliente(NOME);
-
-
-
 
             Log.e("LOGIN", resultado.toString());
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    //Toast.makeText(Login.this, resultado, Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
                     logou();
                 }

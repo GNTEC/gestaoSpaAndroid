@@ -44,7 +44,7 @@ public class ResultadoAgendamento extends AppCompatActivity {
     private TextView txv_resultado_gerenciar;
     private Spinner spn_resultado_agendamento;
     private Button btn_resultado_gerenciar;
-    private Integer COD_EMPRESA = 58;
+    private Integer COD_EMPRESA;
     private Agendamento agendamento;
 
     @Override
@@ -61,6 +61,8 @@ public class ResultadoAgendamento extends AppCompatActivity {
         Drawable upArrow = ContextCompat.getDrawable(this, R.drawable.abc_ic_ab_back_material);
         upArrow.setColorFilter(ContextCompat.getColor(this, R.color.white), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
+
+        COD_EMPRESA = Sessao.COD_EMPRESA;
 
         cast();
         getAgendamento();

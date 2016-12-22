@@ -46,12 +46,11 @@ import br.com.brasil.spa.Utils.DateDialog;
 import br.com.brasil.spa.Utils.Eventos;
 import br.com.brasil.spa.Utils.Sessao;
 
-
 public class MenuInicial extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     //Variaveis estáticas
-    private static Integer COD_EMPRESA = 58;
+    private static Integer COD_EMPRESA;
     private Integer posicao;
 
     //Listas
@@ -80,7 +79,6 @@ public class MenuInicial extends AppCompatActivity
     private Spinner spnH;
     private TextView txv_data;
     private TextView txt_calendario;
-
 
     //seleções spinners
     private String filialSelecionada;
@@ -112,6 +110,10 @@ public class MenuInicial extends AppCompatActivity
     private TextView txv_header_nome;
     private TextView txv_header_email;
 
+    //RadioButtons
+    private RadioButton rb1;
+    private RadioButton rb2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,6 +125,8 @@ public class MenuInicial extends AppCompatActivity
 
         }
         setSupportActionBar(toolbar);
+
+        COD_EMPRESA = Sessao.COD_EMPRESA;
 
         cod_filial = Sessao.getCodFilial();
 
@@ -151,12 +155,8 @@ public class MenuInicial extends AppCompatActivity
         spnP = (Spinner) findViewById(R.id.spn_profissional);
         spnH = (Spinner) findViewById(R.id.spn_horario);
 
-
-
         txv_data = (TextView) findViewById(R.id.txv_data);
         txv_data.setText("");
-
-
 
         txt_calendario = (TextView) findViewById(R.id.txtCalendario);
         txt_calendario.setOnClickListener(new View.OnClickListener() {
@@ -194,41 +194,28 @@ public class MenuInicial extends AppCompatActivity
         txv_header_email = (TextView) v.findViewById(R.id.txv_header_email);
         txv_header_nome.setText(Sessao.getNomeCliente());
         txv_header_email.setText(Sessao.getEMAIL());
-
-        //clicks nos spinners
-        /*spnU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                filialSelecionada = lstSpnUnidade.get(i);
-
-                if (!filialSelecionada.equals("Selecione")) {
-
-                    filialSelecionada = lstSpnUnidade.get(i);
-                    for (int x = 0; i < auxLstUnidades.size(); i++) {
-                        if (filialSelecionada.equals(auxLstUnidades.get(x).getNOME_FILIAL())) {
-                            COD_FILIAL = auxLstUnidades.get(x).getCOD_FILIAL();
-                        }
-                    }
-
-                    getServicos(COD_FILIAL);
-                    spnS.setEnabled(true);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-                //NADA
-
-            }
-        });*/
+        rb1 = (RadioButton) findViewById(R.id.rdnSim);
+        rb2 = (RadioButton) findViewById(R.id.rdnNao);
 
         spnS.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
                 if (!auxLstServicos.get(i).equals("Selecione") && !auxLstServicos.get(i).equals("Sem servicos para exibição")) {
+
+                    dataRecebida = "a";
+                    txv_data.setText("");
+
+                    rb1.setChecked(false);
+                    rb2.setChecked(false);
+
+                    if(auxLstProfissionais != null && auxLstProfissionais.size() > 0){
+                        spnP.setSelection(0);
+                    }
+
+                    if(auxLstProfissionaisHorario != null && auxLstProfissionaisHorario.size() > 0){
+                        spnH.setSelection(0);
+                    }
 
                     servicoSelecionado = auxLstServicos.get(i);
                     codServicoSelecionado = lstServicos.get(i-1).getCodServico();
@@ -399,8 +386,7 @@ public class MenuInicial extends AppCompatActivity
 
     public void onRadioButtonClicked(View v) {
         //require to import the RadioButton class
-        RadioButton rb1 = (RadioButton) findViewById(R.id.rdnSim);
-        RadioButton rb2 = (RadioButton) findViewById(R.id.rdnNao);
+
         Spinner spnP = (Spinner) findViewById(R.id.spn_profissional);
         TextView txtProf = (TextView) findViewById(R.id.txv_profissional);
 
@@ -504,18 +490,23 @@ public class MenuInicial extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
+            finish();
             Intent intent = new Intent(this, Historico.class);
             startActivity(intent);
         } else if (id == R.id.nav_agendar) {
+            finish();
             Intent intent = new Intent(this, MenuInicial.class);
             startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
+            finish();
             Intent intent = new Intent(this, Localizacao.class);
             startActivity(intent);
         } else if (id == R.id.nav_manage) {
+            finish();
             Intent intent = new Intent(this, Promocoes.class);
             startActivity(intent);
         }else if(id == R.id.nav_unidade){
+            finish();
             Intent intent = new Intent(this, SelecaoUnidade.class);
             startActivity(intent);
         } else if (id == R.id.nav_la) {

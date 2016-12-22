@@ -21,10 +21,6 @@ import br.com.brasil.spa.Entidades.Unidade;
 import br.com.brasil.spa.Utils.Eventos;
 import br.com.brasil.spa.Utils.Sessao;
 
-/**
- * Created by Ivan on 07/12/2016.
- */
-
 public class SelecaoUnidade extends AppCompatActivity {
 
     private Spinner spn_escolha_unidade;
@@ -34,7 +30,7 @@ public class SelecaoUnidade extends AppCompatActivity {
     private List<Filial> auxLstUnidades;
     private List<String> lstSpnUnidade;
 
-    private static Integer COD_EMPRESA = 58;
+    private static Integer COD_EMPRESA;
     private String unidadeSelecionada;
     private Integer posicao;
     private Integer COD_FILIAL;
@@ -52,6 +48,8 @@ public class SelecaoUnidade extends AppCompatActivity {
         btn_selecionar_unidade = (Button) findViewById(R.id.btn_selecionar_unidade);
 
         //EventBus.getDefault().register(this);
+
+        COD_EMPRESA = Sessao.COD_EMPRESA;
 
         getUnidade();
 

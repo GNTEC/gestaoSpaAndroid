@@ -6,6 +6,8 @@ package br.com.brasil.spa.Utils;
 
 public class Sessao {
 
+    public static Integer COD_EMPRESA = 58;
+
     public static Integer COD_FILIAL;
 
     public static String ENDERECO;

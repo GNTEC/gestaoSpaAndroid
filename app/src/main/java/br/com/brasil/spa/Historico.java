@@ -4,29 +4,26 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
-import android.support.v4.content.ContextCompat;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-
+import android.widget.TextView;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import br.com.brasil.spa.Adapters.AgendamentoAdapter;
 import br.com.brasil.spa.Entidades.Agendamento;
 import br.com.brasil.spa.Entidades.Cliente;
@@ -39,27 +36,31 @@ import br.com.brasil.spa.Utils.Sessao;
  * Created by Anderson on 30/10/2016.
  */
 
-public class Historico extends AppCompatActivity {
+public class Historico extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private Integer COD_EMPRESA = 58;
+    private Integer COD_EMPRESA;
     private List<Agendamento> lstAgendamento;
     private RecyclerView mRecyclerView;
-    private NavigationView navigationView;
     private Toolbar toolbar;
     private DrawerLayout drawer;
     private ActionBarDrawerToggle toggle;
     private ProgressDialog progressDialog;
 
+    //header
+    private NavigationView navigationView;
+    private TextView txv_header_nome;
+    private TextView txv_header_email;
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_historico_agendamento);
+        setContentView(R.layout.activity_historico);
 
         EventBus.getDefault().register(this);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_list);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_resultado);
+        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_resultado);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setTitle("Historico");
@@ -68,7 +69,39 @@ public class Historico extends AppCompatActivity {
 
         Drawable upArrow = ContextCompat.getDrawable(this, R.drawable.abc_ic_ab_back_material);
         upArrow.setColorFilter(ContextCompat.getColor(this, R.color.white), PorterDuff.Mode.SRC_ATOP);
+        getSupportActionBar().setHomeAsUpIndicator(upArrow);*/
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            toolbar.setElevation(0);
+
+        }*/
+        setSupportActionBar(toolbar);
+
+        final Drawable upArrow = getResources().getDrawable(R.drawable.mobile_nav);
+        upArrow.setColorFilter(Color.parseColor("#d0d0d0"), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);
+        getSupportActionBar().setTitle("Historico");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#4DB6AC")));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+        //header navigation view
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        View v = navigationView.getHeaderView(0);
+        txv_header_nome = (TextView) v.findViewById(R.id.txv_header_nome);
+        txv_header_email = (TextView) v.findViewById(R.id.txv_header_email);
+        txv_header_nome.setText(Sessao.getNomeCliente());
+        txv_header_email.setText(Sessao.getEMAIL());
+
+        COD_EMPRESA = Sessao.COD_EMPRESA;
 
         getAgendamento();
 
@@ -198,5 +231,41 @@ public class Historico extends AppCompatActivity {
             finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_camera) {
+            finish();
+            Intent intent = new Intent(this, Historico.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_agendar) {
+            finish();
+            Intent intent = new Intent(this, MenuInicial.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_slideshow) {
+            finish();
+            Intent intent = new Intent(this, Localizacao.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_manage) {
+            finish();
+            Intent intent = new Intent(this, Promocoes.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_unidade) {
+            finish();
+            Intent intent = new Intent(this, SelecaoUnidade.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_la) {
+            finish();
+            Intent intent = new Intent(this, Login.class);
+            startActivity(intent);
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 }

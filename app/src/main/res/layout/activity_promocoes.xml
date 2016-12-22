@@ -1,63 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_promo"
+    <include
+        layout="@layout/app_bar_promocoes"
         android:layout_width="match_parent"
-        app:titleTextColor="#ffffff"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#4DB6AC"
-        app:popupTheme="@style/AppTheme.PopupOverlay">
-    </android.support.v7.widget.Toolbar>
+        android:layout_height="match_parent" />
 
-    <TextView
-        android:textSize="18sp"
-        android:id="@+id/promo_1"
-        android:layout_margin="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="PROMOÇÕES"
-        android:textColor="#ff0000"
-        android:textStyle="bold"
-        android:layout_above="@+id/historico_layout"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_menu_inicial"
+        app:menu="@menu/activity_menu_inicial_drawer" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/rodape"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:scaleType="fitXY"
-
-        android:id="@+id/img_rodape" />
-
-    <RelativeLayout
-
-        android:id="@+id/historico_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/promo_1"
-        android:layout_alignStart="@+id/promo_1">
-
-        <TextView
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:textSize="18sp"
-            android:id="@+id/txv_promo_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:text="Carregando..."/>
-
-    </RelativeLayout>
-
-
-</RelativeLayout>
+</android.support.v4.widget.DrawerLayout>
