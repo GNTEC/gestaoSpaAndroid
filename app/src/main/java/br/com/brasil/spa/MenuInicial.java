@@ -887,7 +887,7 @@ public class MenuInicial extends AppCompatActivity
         if (result.equals("Agendamento realizado com sucesso.")){
 
             Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
-
+            finish();
             Intent intent = new Intent(this, ResultadoAgendamento.class);
             startActivity(intent);
         }
