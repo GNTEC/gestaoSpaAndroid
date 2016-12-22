@@ -68,12 +68,15 @@ public class Login extends AppCompatActivity implements Runnable, CompoundButton
 
         COD_EMPRESA = Sessao.COD_EMPRESA;
 
+        //instancia o arquivo que salva as preferencias
         pref = getSharedPreferences("login.conf", Context.MODE_PRIVATE);
         editor = pref.edit();
 
+        //recabe os valores da SharedPreferences
         String user = pref.getString("username", "");
         String pass = pref.getString("password", "");
 
+        //seta login e senha se tiverem sidos salvos
         if(!user.equals("") && !pass.equals("")){
             login_email.setText(user);
             login_senha.setText(pass);
@@ -96,12 +99,17 @@ public class Login extends AppCompatActivity implements Runnable, CompoundButton
         }
 
         checkFlag = cb_remember.isChecked();
-
         cb_remember.setOnCheckedChangeListener(this);
 
         btn_login_entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(checkFlag == false){
+                    editor.putString("username", "");
+                    editor.putString("password", "");
+                    editor.apply();
+                }
 
                 progressDialog = new ProgressDialog(Login.this);
                 progressDialog.setTitle("Aguarde...");
@@ -196,6 +204,7 @@ public class Login extends AppCompatActivity implements Runnable, CompoundButton
 
         if(MSG_RETORNO.equals("OK")){
 
+            //se estiver checado para salvaer usuario e senha salva na SharedPreferences
             if(checkFlag){
                 editor.putString("username", login_email.getText().toString());
                 editor.putString("password", login_senha.getText().toString());
@@ -226,6 +235,7 @@ public class Login extends AppCompatActivity implements Runnable, CompoundButton
 
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        //recebe o status do lembrar usuario e senha
         checkFlag = b;
     }
 }
