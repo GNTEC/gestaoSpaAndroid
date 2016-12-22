@@ -200,6 +200,20 @@ public class AlterarAgendamento extends AppCompatActivity implements NavigationV
 
                 if (!auxLstServicos.get(i).equals("Selecione") && !auxLstServicos.get(i).equals("Sem servicos para exibição")) {
 
+                    DATA_SELECIONADA = "a";
+                    txv_alterar_data.setText("");
+
+                    rdnSim_alterar.setChecked(false);
+                    rdnNao_alterar.setChecked(false);
+
+                    if(auxLstProfissionais != null && auxLstProfissionais.size() > 0){
+                        spn_alterar_profissional.setSelection(0);
+                    }
+
+                    if(auxLstProfissionaisHorario != null && auxLstProfissionaisHorario.size() > 0){
+                        spn_alterar_horario.setSelection(0);
+                    }
+
                     servicoSelecionado = auxLstServicos.get(i);
                     codServicoSelecionado = lstServicos.get(i-1).getCodServico();
                     Log.e("SERVICO: ", codServicoSelecionado + " " + servicoSelecionado);
