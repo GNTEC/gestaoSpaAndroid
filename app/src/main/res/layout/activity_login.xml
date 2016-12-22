@@ -103,5 +103,15 @@
         android:layout_above="@+id/login_nome"
         android:layout_centerHorizontal="true" />
 
+    <CheckBox
+        android:text="Lembrar email e senha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_senha"
+        android:layout_alignRight="@+id/login_senha"
+        android:layout_alignEnd="@+id/login_senha"
+        android:id="@+id/cb_remember"
+        android:checked="true" />
+
 
 </RelativeLayout>

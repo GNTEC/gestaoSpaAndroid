@@ -2,7 +2,9 @@ package br.com.brasil.spa;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +15,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,7 +32,9 @@ import java.util.List;
 import br.com.brasil.spa.Utils.Eventos;
 import br.com.brasil.spa.Utils.Sessao;
 
-public class Login extends AppCompatActivity implements Runnable{
+import static com.loopj.android.http.AsyncHttpClient.log;
+
+public class Login extends AppCompatActivity implements Runnable, CompoundButton.OnCheckedChangeListener {
 
     private EditText login_email;
     private EditText login_senha;
@@ -46,30 +52,32 @@ public class Login extends AppCompatActivity implements Runnable{
     private String NOME;
     private String MSG_RETORNO;
 
+    //SharedPreferences
+    private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
+    private CheckBox cb_remember;
+    private Boolean checkFlag;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_login);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            toolbar.setElevation(10);
-        }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            toolbar.setElevation(0);
-        }
-        setSupportActionBar(toolbar);
-
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("");*/
-
         // instancia widgets
         cast();
 
         COD_EMPRESA = Sessao.COD_EMPRESA;
+
+        pref = getSharedPreferences("login.conf", Context.MODE_PRIVATE);
+        editor = pref.edit();
+
+        String user = pref.getString("username", "");
+        String pass = pref.getString("password", "");
+
+        if(!user.equals("") && !pass.equals("")){
+            login_email.setText(user);
+            login_senha.setText(pass);
+        }
 
         //permissoes marshmallow
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -86,6 +94,10 @@ public class Login extends AppCompatActivity implements Runnable{
                 PermissionsMarshmallow.solicitaPermissaoNetworkState(Login.this);
            }
         }
+
+        checkFlag = cb_remember.isChecked();
+
+        cb_remember.setOnCheckedChangeListener(this);
 
         btn_login_entrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,6 +121,7 @@ public class Login extends AppCompatActivity implements Runnable{
 
     public void cast(){
 
+        cb_remember = (CheckBox) findViewById(R.id.cb_remember);
         login_email = (EditText) findViewById(R.id.login_email);
         login_senha = (EditText) findViewById(R.id.login_senha);
         btn_login_entrar = (Button) findViewById(R.id.btn_login_entrar);
@@ -182,6 +195,13 @@ public class Login extends AppCompatActivity implements Runnable{
         }
 
         if(MSG_RETORNO.equals("OK")){
+
+            if(checkFlag){
+                editor.putString("username", login_email.getText().toString());
+                editor.putString("password", login_senha.getText().toString());
+                editor.apply();
+            }
+
             Sessao.setEMAIL(login_email.getText().toString());
             Intent intent = new Intent(Login.this, SelecaoUnidade.class);
             startActivity(intent);
@@ -202,5 +222,10 @@ public class Login extends AppCompatActivity implements Runnable{
                 return;
             }
         }
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        checkFlag = b;
     }
 }
