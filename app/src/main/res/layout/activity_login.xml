@@ -31,21 +31,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="login"
-        android:text="Entrar"
-        android:id = "@+id/btn_login_entrar"
-        android:textColor="#ffffff"
-        android:background="#000000"
-        android:layout_marginBottom="14dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_above="@+id/img_rodape"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <EditText
         android:id="@+id/login_email"
         android:layout_width="match_parent"
@@ -112,6 +97,19 @@
         android:layout_alignEnd="@+id/login_senha"
         android:id="@+id/cb_remember"
         android:checked="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="login"
+        android:text="Entrar"
+        android:id = "@+id/btn_login_entrar"
+        android:textColor="#ffffff"
+        android:background="#000000"
+        android:layout_marginBottom="14dp"
+        android:layout_above="@+id/img_rodape"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

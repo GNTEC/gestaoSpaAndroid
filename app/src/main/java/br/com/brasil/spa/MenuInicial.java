@@ -1,7 +1,9 @@
 package br.com.brasil.spa;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
@@ -113,6 +115,10 @@ public class MenuInicial extends AppCompatActivity
     //RadioButtons
     private RadioButton rb1;
     private RadioButton rb2;
+
+    //SharedPreferences
+    private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -510,7 +516,13 @@ public class MenuInicial extends AppCompatActivity
             Intent intent = new Intent(this, SelecaoUnidade.class);
             startActivity(intent);
         } else if (id == R.id.nav_la) {
+            //Zera o login para das preferencias
+            pref = getSharedPreferences("login.conf", Context.MODE_PRIVATE);
+            editor = pref.edit();
+            editor.clear();
+            editor.commit();
             finish();
+
             Intent intent = new Intent(this, Login.class);
             startActivity(intent);
         }
