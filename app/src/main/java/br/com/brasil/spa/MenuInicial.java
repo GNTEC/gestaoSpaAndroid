@@ -516,20 +516,24 @@ public class MenuInicial extends AppCompatActivity
             Intent intent = new Intent(this, SelecaoUnidade.class);
             startActivity(intent);
         } else if (id == R.id.nav_la) {
-            //Zera o login para das preferencias
-            pref = getSharedPreferences("login.conf", Context.MODE_PRIVATE);
-            editor = pref.edit();
-            editor.clear();
-            editor.commit();
-            finish();
-
-            Intent intent = new Intent(this, Login.class);
-            startActivity(intent);
+            finishApp();
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void finishApp() {
+
+//        pref = getSharedPreferences("login.conf", Context.MODE_PRIVATE);
+//        editor = pref.edit();
+//        editor.clear();
+//        editor.commit();
+
+        Intent intent = new Intent(getApplicationContext(), Login.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("EXIT", true);
+        startActivity(intent);
     }
 
     public void getUnidade() {
