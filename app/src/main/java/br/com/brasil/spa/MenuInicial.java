@@ -10,6 +10,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.View;
@@ -233,9 +234,7 @@ public class MenuInicial extends AppCompatActivity
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
                 //NADA
-
             }
         });
 
@@ -243,7 +242,14 @@ public class MenuInicial extends AppCompatActivity
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                if (!auxLstProfissionais.get(i).equals("Selecione") && !auxLstProfissionais.get(i).equals("Sem profissionais para exibição")) {
+                if(auxLstProfissionais.size() == 0){
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                        }
+                    }, 1000);
+                }else if (!auxLstProfissionais.get(i).equals("Selecione") && !auxLstProfissionais.get(i).equals("Sem profissionais para exibição")) {
 
                     profissionalSelecionado = auxLstProfissionais.get(i);
                     codProfissionalSelecionado = lstProfissionais.get(i-1).getCOD_PROFISSIONAL();
@@ -265,8 +271,16 @@ public class MenuInicial extends AppCompatActivity
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                if(!auxLstProfissionaisHorario.get(i).equals("Selecione") &&
-                        !auxLstProfissionaisHorario.get(i).equals("Sem horários para exibição") && auxLstProfissionaisHorario.size() > 0) {
+                if(auxLstProfissionaisHorario.size() == 0){
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                            }
+                        }, 1000);
+                }else if(auxLstProfissionaisHorario != null && !auxLstProfissionaisHorario.get(i).equals("Selecione") &&
+                            !auxLstProfissionaisHorario.get(i).equals("Sem horários para exibição") &&
+                            auxLstProfissionaisHorario.size() != 0) {
 
                     horaAgendamento = auxLstProfissionaisHorario.get(i);
 
@@ -284,9 +298,9 @@ public class MenuInicial extends AppCompatActivity
 
                     formatarDataTimePicker();
 
-                    if(semProfissional == true){
-                        codProfissionalSelecionado =lstProfissionaisHorario.get(i-1).getCOD_PROFISSIONAL();
-                    }
+                    /*if(semProfissional == true){
+                        codProfissionalSelecionado = lstProfissionaisHorario.get(i-1).getCOD_PROFISSIONAL();
+                    }*/
                 }else{
 
                     horaAgendamento = auxLstProfissionaisHorario.get(i);
@@ -446,6 +460,7 @@ public class MenuInicial extends AppCompatActivity
 
                         txtProf.setVisibility(View.GONE);
                         spnP.setVisibility(View.GONE);
+                        spnP.setSelection(0);
                         spnH.setSelection(0);
                         getHorarioSemProfissional();
 
@@ -835,6 +850,7 @@ public class MenuInicial extends AppCompatActivity
                             }
                             preencheSpinnerProfissionalHorarios();
                             spnH.setEnabled(true);
+                            spnH.setSelection(0);
                             semProfissional = true;
                         }
                     });
@@ -906,6 +922,7 @@ public class MenuInicial extends AppCompatActivity
             finish();
             Intent intent = new Intent(this, ResultadoAgendamento.class);
             startActivity(intent);
+
         }
         else {
 
@@ -921,12 +938,17 @@ public class MenuInicial extends AppCompatActivity
         dataRecebida = data.getData();
         formatarDataTimePicker();
         txv_data.setText("Data selecionada: " + dataRecebida);
-        if(auxLstProfissionaisHorario != null && auxLstProfissionaisHorario.size() > 0) {
-            horaAgendamento = auxLstProfissionaisHorario.get(0);
-        }else{
-            horaAgendamento = "";
-        }
-        spnH.setSelection(0);
 
+        if(auxLstProfissionaisHorario != null && auxLstProfissionaisHorario.size() > 0) {
+
+            horaAgendamento = auxLstProfissionaisHorario.get(0);
+
+        }else{
+
+            horaAgendamento = "";
+
+        }
+
+        spnH.setSelection(0);
     }
 }
