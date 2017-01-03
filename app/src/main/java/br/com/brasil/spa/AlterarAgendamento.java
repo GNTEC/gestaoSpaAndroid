@@ -8,6 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
@@ -234,7 +235,14 @@ public class AlterarAgendamento extends AppCompatActivity implements NavigationV
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                if (!auxLstProfissionais.get(i).equals("Selecione") && !auxLstProfissionais.get(i).equals("Sem profissionais para exibição")
+                if(auxLstProfissionais.size() == 0) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                        }
+                    }, 1000);
+                }else if (!auxLstProfissionais.get(i).equals("Selecione") && !auxLstProfissionais.get(i).equals("Sem profissionais para exibição")
                 && !auxLstProfissionais.equals(null) && auxLstProfissionais.size() > 0) {
 
                     profissionalSelecionado = auxLstProfissionais.get(i);
@@ -260,7 +268,14 @@ public class AlterarAgendamento extends AppCompatActivity implements NavigationV
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                if(!auxLstProfissionaisHorario.get(i).equals("Selecione") &&
+                if(auxLstProfissionais.size() == 0) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                        }
+                    }, 1000);
+                }else if(!auxLstProfissionaisHorario.get(i).equals("Selecione") &&
                         !auxLstProfissionaisHorario.get(i).equals("Sem horários para exibição") && auxLstProfissionaisHorario.size() > 0) {
 
                     horaAgendamento = auxLstProfissionaisHorario.get(i);

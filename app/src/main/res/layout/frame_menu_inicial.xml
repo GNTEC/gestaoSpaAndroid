@@ -190,7 +190,7 @@
                 android:layout_below="@+id/view0"
                 android:layout_alignLeft="@+id/view0"
                 android:layout_alignStart="@+id/view0"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/txv_profissional"

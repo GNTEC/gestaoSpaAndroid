@@ -17,6 +17,8 @@ import android.widget.TextView;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,6 +53,8 @@ public class AgendamentoAdapter extends RecyclerView.Adapter<AgendamentoAdapter.
     private Handler handler;
     private String res;
 
+    private String formatado;
+
     public AgendamentoAdapter(Context context, List<Agendamento> list){
         this.context = context;
         mList = list;
@@ -73,11 +77,15 @@ public class AgendamentoAdapter extends RecyclerView.Adapter<AgendamentoAdapter.
     @Override
     public void onBindViewHolder(mViewHolder holder, final int position) {
 
+        String valorDB = mList.get(position).getSERVICOS().getValServico().toString();
+        String precoServico = formataValor(valorDB);
+
         holder.txv_codigo_agendamento1.setText("Código Agendamento: " + String.valueOf(mList.get(position).getCOD_AGENDAMENTO()));
         holder.txv_nome_profissional.setText("Profissional: " + String.valueOf(mList.get(position).getPROFISSIONAIS().getNOME()));
         holder.txv_desc_servico.setText("Descrição serviço: " +String.valueOf(mList.get(position).getSERVICOS().getDesServico()));
-        holder.txv_valor.setText("Valor: R$ " + String.valueOf(mList.get(position).getSERVICOS().getValServico()));
-        holder.txv_nome_cliente.setText("Nome cliente: "+ String.valueOf(mList.get(position).getCLIENTE().getNOME()));
+        /*holder.txv_valor.setText("Valor: R$ " + String.valueOf(mList.get(position).getSERVICOS().getValServico()));*/
+        holder.txv_valor.setText("Valor: " + precoServico);
+        holder.txv_nome_cliente.setText("Nome cliente: " + String.valueOf(mList.get(position).getCLIENTE().getNOME()));
         holder.txv_data.setText("Data: " + String.valueOf(mList.get(position).getDATA()));
         holder.txv_hora.setText("Hora: " + String.valueOf(mList.get(position).getHORA()));
         holder.txv_status.setText("Status: " + String.valueOf(mList.get(position).getSTATUS()));
@@ -214,6 +222,15 @@ public class AgendamentoAdapter extends RecyclerView.Adapter<AgendamentoAdapter.
                 }
             }
         }).start();
+    }
+
+    public String formataValor(String valor){
+
+        BigDecimal valor1 = new BigDecimal(valor);
+        NumberFormat nf = NumberFormat.getCurrencyInstance();
+        formatado = nf.format (valor1);
+
+        return formatado;
     }
 }
 

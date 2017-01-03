@@ -22,10 +22,6 @@ import android.widget.TextView;
 
 import br.com.brasil.spa.Utils.Sessao;
 
-/**
- * Created by Anderson on 29/10/2016.
- */
-
 public class Promocoes extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private String resultado;
