@@ -83,7 +83,6 @@
                 android:id="@+id/view1"
                 android:layout_below="@+id/txtCalendario"
                 android:background="#dadada"
-                android:layout_marginTop="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_width="match_parent"
@@ -171,26 +170,15 @@
 
 
             <TextView
-                android:text="10/10/2010"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/txv_data"
-                android:layout_above="@+id/view1"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:paddingRight="16dp"
-                android:textSize="14sp" />
-
-            <TextView
                 android:text="Escolha uma data"
-                android:layout_marginTop="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtCalendario"
+                android:padding="12dp"
                 android:layout_below="@+id/view0"
                 android:layout_alignLeft="@+id/view0"
                 android:layout_alignStart="@+id/view0"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txv_profissional"
@@ -202,6 +190,18 @@
                 android:layout_alignLeft="@+id/spn_profissional"
                 android:layout_alignStart="@+id/spn_profissional"
                 android:textSize="14sp" />
+
+            <TextView
+                android:text="10/10/2010"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txv_data"
+                android:paddingLeft="16dp"
+                android:textSize="14sp"
+                android:layout_alignBaseline="@+id/txtCalendario"
+                android:layout_alignBottom="@+id/txtCalendario"
+                android:layout_alignRight="@+id/view0"
+                android:layout_alignEnd="@+id/view0" />
 
         </RelativeLayout>
     </ScrollView>
