@@ -188,6 +188,17 @@ public class AlterarAgendamento extends AppCompatActivity implements NavigationV
             }
         });
 
+        txv_alterar_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FragmentManager fm = AlterarAgendamento.this.getSupportFragmentManager();
+                DateDialog dateDialog = new DateDialog();
+                dateDialog.show(fm, "TAG");
+
+            }
+        });
+
         btn_alterar_agendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -177,6 +177,17 @@ public class MenuInicial extends AppCompatActivity
             }
         });
 
+        txv_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FragmentManager fm = MenuInicial.this.getSupportFragmentManager();
+                DateDialog dateDialog = new DateDialog();
+                dateDialog.show(fm, "TAG");
+
+            }
+        });
+
         travaSpinners();
 
         getUnidade();

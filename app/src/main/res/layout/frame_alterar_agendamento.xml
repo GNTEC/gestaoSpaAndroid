@@ -191,7 +191,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txv_alterar_data"
                 android:paddingLeft="16dp"
-                android:padding="8dp"
+                android:padding="12dp"
                 android:layout_alignBaseline="@+id/txt_alterar_calendario"
                 android:layout_alignBottom="@+id/txt_alterar_calendario"
                 android:layout_alignRight="@+id/view1"
