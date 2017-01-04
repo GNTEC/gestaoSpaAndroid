@@ -942,7 +942,7 @@ public class AlterarAgendamento extends AppCompatActivity implements NavigationV
 
         DATA_SELECIONADA = data.getData();
         formatarDataTimePicker();
-        txv_alterar_data.setText("Data selecionada: " + DATA_SELECIONADA);
+        txv_alterar_data.setText(DATA_SELECIONADA);
         if(auxLstProfissionaisHorario != null && auxLstProfissionaisHorario.size() > 0) {
             horaAgendamento = auxLstProfissionaisHorario.get(0);
         }else{

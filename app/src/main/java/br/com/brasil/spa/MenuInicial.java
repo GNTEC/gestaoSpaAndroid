@@ -948,7 +948,7 @@ public class MenuInicial extends AppCompatActivity
 
         dataRecebida = data.getData();
         formatarDataTimePicker();
-        txv_data.setText("Data selecionada: " + dataRecebida);
+        txv_data.setText(dataRecebida);
 
         if(auxLstProfissionaisHorario != null && auxLstProfissionaisHorario.size() > 0) {
 
