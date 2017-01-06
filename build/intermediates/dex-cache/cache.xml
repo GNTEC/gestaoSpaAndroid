@@ -484,7 +484,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="d77628c76729baf9c39aaa0bd94fe56cee795db6">
+        sha1="e8195087ea6cd08a117f9e7bfaf2c893060c068f">
         <dex dex="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_a33d9f954544bcd0e4f50d79e24d0d9a0d9c1759\classes.dex" />
     </item>
     <item
@@ -507,21 +507,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_5395d7a2e4bba96a068332693bd53f2fe5ba86b8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\9.8.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="15e59454416c6341bd3ed2533b585cd340682dd1">
         <dex dex="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-9.8.0_e864b59259ea99caa63263860b9d9675a855f23d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_5395d7a2e4bba96a068332693bd53f2fe5ba86b8\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -583,7 +583,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="512b9e540c410355494fa5f78b70ca2b9f277459">
+        sha1="11621eac6c9ebefbfc4a84fe77abb311a882dec3">
         <dex dex="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_fe8542ad261b9099c8a7f82088cbd1b1f2d7ff6c\classes.dex" />
     </item>
     <item
