@@ -507,21 +507,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\9.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="15e59454416c6341bd3ed2533b585cd340682dd1">
-        <dex dex="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-9.8.0_e864b59259ea99caa63263860b9d9675a855f23d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
         <dex dex="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_5395d7a2e4bba96a068332693bd53f2fe5ba86b8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\9.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="15e59454416c6341bd3ed2533b585cd340682dd1">
+        <dex dex="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-9.8.0_e864b59259ea99caa63263860b9d9675a855f23d\classes.dex" />
     </item>
     <item
         is-multidex="true"
