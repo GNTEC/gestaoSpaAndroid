@@ -484,7 +484,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="e8195087ea6cd08a117f9e7bfaf2c893060c068f">
+        sha1="1a0f2a83fa278c386dc748beac8bea907be9c49c">
         <dex dex="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_a33d9f954544bcd0e4f50d79e24d0d9a0d9c1759\classes.dex" />
     </item>
     <item
@@ -583,7 +583,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="11621eac6c9ebefbfc4a84fe77abb311a882dec3">
+        sha1="b4ce4cdfb7e126d9f6df6f458948baeaa3d9a777">
         <dex dex="C:\Users\ivanc\Documents\Projetos Android\gestaoSpaAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_fe8542ad261b9099c8a7f82088cbd1b1f2d7ff6c\classes.dex" />
     </item>
     <item
